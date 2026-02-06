@@ -1,0 +1,112 @@
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+    processEscapes: true
+  },
+  TeX: {
+    extensions: ["mhchem.js"]
+  },
+  CommonHTML: {
+    matchFontHeight: false
+  }
+});
+</script>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Loan</title>
+<link href="090413.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+</head>
+
+<body>
+<p class="X-Large-RED"><strong>ローン計算-01 </strong></p>
+<p>&nbsp;</p>
+<p>研究とは直接関係ない話ですが，ふと思い立ってローン計算を考えて見ることにしました．</p>
+<p>昔，どこかのサイトか本で計算方法を見た記憶があるのですが，今検索してもヒットしなかったので自分で計算してみました．</p>
+<p>ローンには二種類あり，<br>
+  <span class="Blue">　元金均等　：　毎月の一定返済額　+　金利<br>
+　元利均等　：　毎月の一定返済額（金利を含む）</span><br> 
+  があるようです．</p>
+<p>計算自体は，元金均等，が単純です．</p>
+<p>計算に必要な情報は，<br>
+  <span class="Blue">　借入金 <br>
+  　金利<br>
+  　返済期間</span><br>
+です．</p>
+<p class="Large-Red">・金利</p>
+<p>一般的には年の金利が表示されていますが，一般的には毎月返却することになるので年金利の1/12の月ごとの金利が計算には使われます．</p>
+<p>とりあえず，簡単に，<br>
+　金利（年）：ｋ<br>
+　金利（月）：ｘ (=k/12)<br>
+としましょう．</p>
+<p class="Large-Red">・返済期間</p>
+<p>これも一般的には，何年？，を指しますが，これも月ごとの計算なので，<br>
+　返済期間（年）：y<br>
+　返済期間（月）：ｍ (=year/12)<br>
+としましょう．</p>
+<p>また，計算を簡単にするために，<br>
+  　ボーナス払いは考慮しない<br>
+  　金利の変更も考慮しない<br>
+とします．</p>
+<p>まずは，</p>
+<p class="Large-Bold-RED">・元金均等</p>
+<p>毎月の返済額は，借入金を月数で割ったものですから，</p>
+<p>\( \Large      \frac{s}{m} \)</p>
+<p>となります．</p>
+<p class="Blue">一ヶ月目</p>
+<p>最初の返済時の金利は，借入金×金利（月）となるので，</p>
+<p>\( \Large      s \cdot x \)</p>
+<p>となります．その時点での残金は，</p>
+<p>\( \Large      s = \frac{s}{m} = s \left( 1-\frac{1}{m} \right) \)</p>
+<p>となります．</p>
+<p class="Blue">二ヶ月目</p>
+<p>毎月の返済額は変わらないので，</p>
+<p>\( \Large      \frac{s}{m} \)</p>
+<p>しかし，金利はすでに一ヶ月分返済しているので少し借入金が減っているので，</p>
+<p>\( \Large      s \cdot \left( 1-\frac{1}{m} \right) \cdot x \)</p>
+<p>となります．その時点での残金は，2回ぶん返済したので，</p>
+<p>\( \Large      s = \frac{s}{m} = s \left( 1-\frac{2}{m} \right) \)</p>
+<p>となります．</p>
+<p class="Blue">三ヶ月目</p>
+<p>毎月の返済額は変わらないので，</p>
+<p>\( \Large      \frac{s}{m} \)</p>
+<p>しかし，金利はすでに二ヶ月分返済しているので少し借入金が減っているので，</p>
+<p>\( \Large      s \cdot \left( 1-\frac{2}{m} \right) \cdot x \)</p>
+<p>となります．その時点での残金は，3回ぶん返済したので，</p>
+<p>\( \Large      s = \frac{s}{m} = s \left( 1-\frac{3}{m} \right) \)</p>
+<p>となります．つまり，</p>
+<p class="Blue"><strong>nヶ月目</strong></p>
+<p>毎月の返済額は変わらないので，</p>
+<p>\( \Large      \frac{s}{m} \)</p>
+<p>しかし，金利はすでにnヶ月分返済しているので少し借入金が減っているので，</p>
+<p>\( \Large      s \cdot \left( 1-\frac{n-1}{m} \right) \cdot x \)</p>
+<p>となります．その時点での残金は，n回ぶん返済したので，</p>
+<p>\( \Large      s = \frac{s}{m} = s \left( 1-\frac{n}{m} \right) \)</p>
+<p>となります．</p>
+<p>&nbsp;</p>
+<p class="Large-Blue">実際の計算</p>
+<p>実査に計算してみましょう．<br>
+　金利（年）：1.2％ (=0.1%/month)<br>
+　借入金：1200万円<br>
+　期間（年）：10年 (=120ヶ月）<br>
+として計算してみると，</p>
+<p><img src="Loan-01.png" width="685" height="439" alt=""/></p>
+<p>となり，<a href="https://keisan.casio.jp/exec/system/1256183644" target="_blank">こちら</a>，で計算した結果と一致します．</p>
+<p>&nbsp;</p>
+<p>．<br />
+次のページに<span class="Blue">元利均等</span>の計算結果を示します．</p>
+<p><span class="style7"><a href="index.html"> <img src="TOP.png" alt="t" width="57" height="34" /></a> <a href="Loan-02.html"><img src="R-arrow.png" alt="r" width="57" height="34" /></a></span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

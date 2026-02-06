@@ -1,0 +1,82 @@
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+    processEscapes: true
+  },
+  TeX: {
+    extensions: ["mhchem.js"]
+  },
+  CommonHTML: {
+    matchFontHeight: false
+  }
+});
+</script>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Revolving</title>
+<link href="090413.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+</head>
+
+<body>
+<p class="X-Large-RED"><strong>リボ払い-02 </strong></p>
+<p>&nbsp;</p>
+<p><span class="Large-Red">・リボ払いの返済回数</span></p>
+<p><a href="Loan-02.html">ここ</a>で，計算したように，毎月の支払額，W，は，</p>
+<p>\(   \Large \displaystyle W   =  \frac{sx}{1-(1+x)^{-m}}   \)</p>
+<p>　W：返済額（月）<br>
+  　ｓ：借入金<br>
+　ｘ：手数料（月）  <br />
+　ｍ：返済期間（月）</p>
+<p>でした．返済期間を逆算すると，</p>
+<p>\(   \Large \displaystyle 1-(1+x)^{-m}    =  \frac{sx}{W}   \)</p>
+<p>\(   \Large \displaystyle (1+x)^{-m}    =1 -  \frac{sx}{W} =  \frac{W-sx}{W}\)</p>
+<p>\(   \Large \displaystyle -m \cdot ln (1+x)    =  ln \frac{W-sx}{W}\)</p>
+<p>\(   \Large \displaystyle m =  - \frac{ln \frac{W-sx}{W}}{ln (1+x)} \)</p>
+<p>と計算できます．</p>
+<p>実際に計算してみると，</p>
+<p class="Blue">借入金：10万円<br />
+月々の支払い：5千円<br />
+金利（年）：15％</p>
+<p>では，</p>
+<p>\(   \Large \displaystyle m =  - \frac{ln \frac{5,000-100,000 \times 0.0125}{5,000}}{ln (1+0.0125)} = 23.16 \)</p>
+<p>となり，切り上げで<span class="Large-Blue">24ヶ月</span>，<a href="Revolving-01.html">前ページ</a>の結果と一致します．</p>
+<p>&nbsp;</p>
+<p>さらに，</p>
+<p><span class="Blue">借入金：32万円<br />
+月々の支払い：5千円<br />
+金利（年）：15％</span></p>
+<p>\(   \Large \displaystyle m =  - \frac{ln \frac{5,000-320,000 \times 0.0125}{5,000}}{ln (1+0.0125)} = 129.56 \)</p>
+<p>
+  <!--td {border: 1px solid #cccccc;}br {mso-data-placement:same-cell;}-->
+となり，切り上げで<span class="Large-Blue">130ヶ月</span>，<a href="Revolving-01.html">前ページ</a>の結果と一致します．</p>
+<p>&nbsp;</p>
+<p><span class="Large-Red">・リボ払いの残金</span></p>
+<p>残金は，<a href="Loan-02.html">ここ</a>にあるように，</p>
+<p>nヶ月　：　\( \Large      \displaystyle s 
+\frac{(1+x)^{m}-( 1+x )^{n}}{(1+x)^{m}-1} \)</p>
+<p>となります．</p>
+<p>&nbsp;</p>
+<p><span class="Large-Red">・リボ払いの金利</span></p>
+<p>金利は，<a href="Loan-02.html">ここ</a>にあるように，</p>
+<p>nヶ月　：　\(  \Large \displaystyle      sx 
+\frac{ (1+x)^{m}-( 1+x )^{n-1}}{(1+x)^{m}-1} 　  \) </p>
+<p>となります．</p>
+<p>&nbsp;</p>
+<p>では，金利の総額を計算してみましょう</p>
+<p>&nbsp;</p>
+<p><span class="style7"><a href="Revolving-01.html"><img src="L-arrow.png" alt="l" width="57" height="34" /></a><a href="index.html"> <img src="TOP.png" alt="t" width="57" height="34" /></a></span><a href="Revolving-03.html"><img src="R-arrow.png" alt="r" width="57" height="34" /></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

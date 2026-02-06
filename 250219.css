@@ -1,0 +1,50 @@
+.Blue-Large {
+	font-size: large;
+	color: #00F;
+}
+.Red-Large {
+	font-size: large;
+	color: #F00;
+}
+.Blue-Large-Bold {
+	font-size: x-large;
+	font-weight: bold;
+	color: #00F;
+}
+.Red-Large-Bold {
+	font-size: x-large;
+	font-weight: bold;
+	color: #F00;
+}
+.Blue-X-Large {
+	font-size: x-large;
+	color: #00F;
+}
+.Red-X-Large {
+	font-size: x-large;
+	color: #F00;
+}
+.Red-Bold {
+	font-weight: bold;
+	color: #F00;
+}
+.Blue-Bold {
+    font-weight: bold;
+    color: #00F;
+    text-align: left;
+}
+.Red {
+	color: #F00;
+}
+
+.Blue {
+	color: #00F;
+}
+
+.X-large {
+	font-size: x-large;
+}
+.Red-X-large {
+	color: #F00;
+	font-size: xx-large;
+}

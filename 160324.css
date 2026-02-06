@@ -1,0 +1,61 @@
+.Red {
+	color: #F00;
+}
+.Blue {
+	color: #00F;
+}
+.Red-Bold {
+	font-weight: bold;
+	color: #F00;
+}
+.Blue-Bold {
+	font-weight: bold;
+	color: #00F;
+}
+.Large-Red {
+	font-size: large;
+	color: #F00;
+}
+.Large-Blue {
+	font-size: large;
+	color: #00F;
+}
+.Large-Bold-Red {
+	font-size: large;
+	font-weight: bold;
+	color: #F00;
+}
+.Large-Bold-Blue {
+	font-size: large;
+	font-weight: bold;
+	color: #00F;
+}
+.X-Large-RED {
+	font-size: x-large;
+	color: #F00;
+}
+.X-Large-Blue {
+	font-size: x-large;
+	color: #00F;
+}
+.X-Large-Bold-Blue {
+	font-size: x-large;
+	font-weight: bold;
+	color: #00F;
+}
+.X-Large-Bold-RED {
+	font-size: x-large;
+	font-weight: bold;
+	color: #F00;
+}.Background-yellow {
+	color: #FF0;
+}
+  span.mathbg-r {
+    background-color: #f8d8d0;
+  }
+  span.mathbg-g {
+    background-color: #d8f8d0;
+  }
+  span.mathbg-y {
+    background-color: #f8f0d0;
+  }

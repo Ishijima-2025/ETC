@@ -1,0 +1,81 @@
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+    processEscapes: true
+  },
+  TeX: {
+    extensions: ["mhchem.js"]
+  },
+  CommonHTML: {
+    matchFontHeight: false
+  }
+});
+</script>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Loan</title>
+<link href="090413.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+</head>
+
+<body>
+<p class="X-Large-RED"><strong>ローン計算-03　金利の総額 </strong></p>
+<p>&nbsp;</p>
+<p>では，それぞれの金利の総額を計算してみましょう．</p>
+<p>&nbsp;</p>
+<p><span class="Large-Red">・元金均等</span></p>
+<p>&nbsp;</p>
+<p>金利は，</p>
+<p>\( \Large      s \cdot \left( 1-\frac{n-1}{m} \right) \cdot x \)</p>
+<p>となります．これの合計ですから，</p>
+<p>\( \Large      \displaystyle \sum_{i=1}^{m} sx \cdot \left( 1-\frac{i-1}{m} \right)  \)</p>
+<p>です，整理すると，</p>
+<p>\( \Large      sx \displaystyle \sum_{i=1}^{m}  \frac{m-i+1}{m}   = sx(m+1) -\frac{sx}{m} \displaystyle \sum_{i=1}^{m} i \)</p>
+<p>これは簡単に計算できて，</p>
+<p>\( \Large       \frac{sx(m+1)}{2} \)</p>
+<p><img src="Gankin.png" width="604" height="557" alt=""/></p>
+<p>と金利金額は直線的に減少していくことがわかります．</p>
+<p>&nbsp;</p>
+<p><span class="Large-Red">・元利均等</span></p>
+<p>&nbsp;</p>
+<p><span class="large-red">金利</span>は，</p>
+<p>nヶ月　：　\( 　\Large      sx 
+\frac{ (1+x)^{m}-( 1+x )^{n-1}}{(1+x)^{m}-1} 　  \)</p>
+<p>となりますので，ｎを１からｍまで足せばいいわけです．</p>
+<p>nヶ月　：　\( 　\Large      sx 
+\frac{ (1+x)^{m}-( 1+x )^{n-1}}{(1+x)^{m}-1} 　=  \frac{ sx}{(1+x)^{m}-1} \left[(1+x)^{m}-( 1+x )^{n-1} \right] \)</p>
+<p>として，総金利は，なじみ等比数列を用いて</p>
+<p>\( 　\begin{eqnarray} \Large      &amp;&amp; \displaystyle \sum_{i=1}^{m-1} \frac{ sx}{(1+x)^{m}-1} \left[(1+x)^{m}-( 1+x )^{i-1} \right] \\<br>
+  &amp;=&amp; \frac{ sx}{(1+x)^{m}-1}  \left[ m (1+x)^{m} - \displaystyle \sum_{i=1}^{m-1} ( 1+x )^{i-1} \right]\\<br>
+  &amp;=&amp; \frac{ sx}{(1+x)^{m}-1}  \left[ m (1+x)^{m} - \frac{(1+x)^m-1}{x} \right]\\ <br>
+  &amp;=&amp; sx \left[ \frac{ m (1+x)^{m}}{(1+x)^{m}-1}  - \frac{1}{x} \right]\\ <br>
+\end{eqnarray} \)</p>
+<p>と計算することができます．</p>
+<p><img src="Ganri.png" width="617" height="569" alt=""/></p>
+<p>式からはわかりませんが．金利金額はほぼ直線的に減少していくことがわかります．</p>
+<p class="Large-Blue">実際の計算</p>
+<p>実査に計算してみましょう．<br>
+  　金利（年）：1.2％ (=0.1%/month)<br>
+  　借入金：1200万円<br>
+  　期間（年）：10年 (=120ヶ月）<br>
+  として計算してみると，</p>
+<p><span class="Large-Red">元金均等</span>　：　72.60 万円<br>
+<span class="Large-Red">元利均等</span>　：　74.04 万円</p>
+<p>と若干，元金均等が安くなることがわかります（いつもこうなるかはわかりませんが．．．）</p>
+<p>次に，リボ払い，について計算してみます．</p>
+<p>&nbsp;</p>
+<p><span class="style7"><a href="Loan-02.html"><img src="L-arrow.png" alt="l" width="57" height="34" /></a><a href="index.html"> <img src="TOP.png" alt="t" width="57" height="34" /></a></span><a href="Revolving-01.html"><img src="R-arrow.png" alt="r" width="57" height="34" /></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

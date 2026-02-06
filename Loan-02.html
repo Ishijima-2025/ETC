@@ -1,0 +1,184 @@
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+    processEscapes: true
+  },
+  TeX: {
+    extensions: ["mhchem.js"]
+  },
+  CommonHTML: {
+    matchFontHeight: false
+  }
+});
+</script>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Loan</title>
+<link href="090413.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+</head>
+
+<body>
+<p class="X-Large-RED"><strong>ローン計算-02 </strong></p>
+<p>&nbsp;</p>
+<p><span class="Large-Bold-RED">・元利均等</span></p>
+<p>これは，結構計算がややこしいです．<br>
+　毎月の返済額が一定＝借入金の返済額+金利<br>
+を計算しなければならないからです．</p>
+<p>前ページと同様に，</p>
+<p class="Large-Red">・金利</p>
+<p>一般的には年の金利が表示されていますが，一般的には毎月返却することになるので年金利の1/12の月ごとの金利が計算には使われます．</p>
+<p>とりあえず，簡単に，<br>
+　金利（年）：ｋ<br>
+　金利（月）：ｘ (=k/12)<br>
+としましょう．</p>
+<p class="Large-Red">・返済期間</p>
+<p>これも一般的には，何年？，を指しますが，これも月ごとの計算なので，<br>
+　返済期間（年）：y<br>
+　返済期間（月）：ｍ (=year/12)<br>
+としましょう．</p>
+<p>また，計算を簡単にするために，<br>
+  　ボーナス払いは考慮しない<br>
+  　金利の変更も考慮しない<br>
+とします．</p>
+<p>・返済金額</p>
+<p>　毎月の返済金額を，W，とします．</p>
+<p>，</p>
+<p class="Large-Red">・元利均等</p>
+<p>毎月の返済額は，W，となります．</p>
+<p class="Blue">一ヶ月目</p>
+<p>最初の返済時の金利は，借入金×金利（月）となるので，</p>
+<p>\( \Large      s \cdot x \)</p>
+<p>となります．したがって，一ヶ月目の返済額は，</p>
+<p>\( \Large      W - s \cdot x \)</p>
+<p>となります．したがって，一ヶ月目の残金は，</p>
+<p>\( \Large      s- (W - s \cdot x) \)</p>
+<p>となります．</p>
+<p class="Blue">二ヶ月目</p>
+<p>返済額は，Wですが，金利はすでに一ヶ月目に上記の額を返済しているので少し借入金が減っているので，</p>
+<p>\( \Large      \left[s- (W - s \cdot x) \right] \cdot x \)</p>
+<p>となり，二ヶ月目の返済額は，</p>
+<p>\( \Large      W - \left[s- (W - s \cdot x) \right] \cdot x = ( 1+x ) ( W-s \cdot x) \)</p>
+<p>となり，二ヶ月目の残金は，</p>
+<p>\( \Large      s- (W - s \cdot x) - ( 1+x ) ( W-s \cdot x) = s - ( 2+x ) ( W-s \cdot x)\)</p>
+<p>となります．</p>
+<p class="Blue">三ヶ月目</p>
+<p>返済額は，Wですが，金利はすでににヶ月目に上記の額を返済しているので少し借入金が減っているので，</p>
+<p>\( \Large      \left[s- (2+x)(W - s \cdot x) \right] \cdot x \)</p>
+<p>となり，二ヶ月目の返済額は，</p>
+<p>\( \begin{eqnarray} \Large      W - \left[s- (2+x)(W - s \cdot x) \right] \cdot x &amp;=&amp; W - s \cdot x + (2+x)(W - s \cdot x)x \\<br>
+  &amp;=&amp; (W - s \cdot x) [1 + (2+x)x] \\<br>
+  &amp;=&amp; (W - s \cdot x) [1 + 2x+x^2] \\  <br>
+  &amp;=&amp; (W - s \cdot x) (1 + x)^2 \\  <br>
+\end{eqnarray} \)</p>
+<p>とあるていど簡単になり，三ヶ月目の残金は，</p>
+<p>\( \Large       s - ( 2+x ) ( W-s \cdot x) - (W - s \cdot x) (1 + x)^2 = s-(W - s \cdot x)(x^2 + 3x+3)\)</p>
+<p>とちょっと複雑になります．</p>
+<p class="Blue">四ヶ月目</p>
+<p>返済額は，Wですが，金利はすでににヶ月目に上記の額を返済しているので少し借入金が減っているので，</p>
+<p>\( \Large      \left[s- (W - s \cdot x) (x^2 + 3x+3)\right] \cdot x \)</p>
+<p>となり，四ヶ月目の返済額は，</p>
+<p>\( \begin{eqnarray} \Large      W - \left[s- (W - s \cdot x)(x^2 + 3x+3) \right] \cdot x &amp;=&amp; W - s \cdot x + (W - s \cdot x)(x^2 + 3x+3)x \\<br>
+  &amp;=&amp; (W - s \cdot x) [1 + (x^2 + 3x+3)x] \\<br>
+  &amp;=&amp; (W - s \cdot x) [x^3 + 3x^2 +3x+1] \\ <br>
+  &amp;=&amp; (W - s \cdot x) (1 + x)^3 \\ <br>
+  \end{eqnarray} \)</p>
+<p>とある法則性を示します．</p>
+<p>つまり，iヶ月後の<span class="large-red">月の返済額</span>は，</p>
+<p>\(  \Large　(W - s \cdot x) (1 + x)^{i-1}  \)</p>
+<p>と簡単になるのです．これをｎ回繰り返した総額が借入金，ｓ，となるのです．したがって，</p>
+<p>\(  \Large　\displaystyle \sum_{i=1}^m (W - s \cdot x) (1 + x)^{i-1}  = (W - s \cdot x) \displaystyle \sum_{i=1}^m  (1 + x)^{i-1}\)</p>
+<p>を計算することになります，この計算は，等比数列の和でお馴染みですよね．</p>
+<p>\(  \Large　Y = \displaystyle \sum_{i=1}^m  (1 + x)^{i-1}  = 1 + (1+x) + (1+x)^2+.......(1+x)^{m-1} \)</p>
+<p>とすれば，</p>
+<p>\(  \Large　(1+x)Y =   (1+x) + (1+x)^2+.......(1+x)^{m} \)</p>
+<p>となり，差分を取れば，</p>
+<p>\(  \Large　(1+x)Y-Y = (1+x)^{m}-1 \)</p>
+<p>\(  \Large　Y= \frac{(1+x)^{m}-1}{x} \)</p>
+<p>\(  \Large \displaystyle　s= (W - s \cdot x) \frac{(1+x)^{m}-1}{x} \)</p>
+<p>\(  \Large \displaystyle　W - s \cdot x = \frac{sx}{(1+x)^{m}-1} \)</p>
+<p>\(  \begin{eqnarray} \Large \displaystyle W &amp;=&amp;  s \cdot x + \frac{sx}{(1+x)^{m}-1} \\<br>
+  &amp;=&amp; sx \left[ 1+\frac{1}{(1+x)^{m}-1} \right] \\<br>
+&amp;=&amp; sx \left[ \frac{(1+x)^m}{(1+x)^{m}-1} \right] \\<br>
+&amp;=&amp;  \frac{sx}{1-(1+x)^{-m}}  \\<br>
+\end{eqnarray} \)</p>
+<p>ときれいになり，毎月の返済額，W，を計算することができます．</p>
+<p><span class="large-red">残金</span>は，</p>
+<p>１　：　\( \Large      s- (W - s \cdot x) \)<br>
+２　：　\( \Large      s- (W - s \cdot x) - ( 1+x ) ( W-s \cdot x)\)<br>
+３　：　\( \Large      s- (W - s \cdot x) - ( 1+x ) ( W-s \cdot x) - ( 1+x )^2 ( W-s \cdot x)\)</p>
+<p>となるので，</p>
+<p>nヶ月　：　\( \Large      s-(W - s \cdot x)\displaystyle \sum_{i=1}^n ( 1+x )^{i-1} \)</p>
+<p>となるので，上と同様の等比数列の計算から，</p>
+<p>nヶ月　：　\( \Large      s-(W - s \cdot x) \frac{( 1+x )^{n}-1}{x} \)</p>
+<p>となります．Wは，</p>
+<p>\(   \Large　W =  \frac{sx}{1-(1+x)^{-m}}   \)</p>
+<p>ですので，Wを消すために，W-sxを計算すると，</p>
+<p>\(\begin{eqnarray}   \Large　&amp;&amp; W-sx \\<br>
+  &amp;=&amp;  sx \left[ \frac{sx}{1-(1+x)^{-m}}-1 \right] \\ <br>
+  &amp;=&amp;
+  sx \frac{1-1+(1+x)^{-m}}{1-(1+x)^{-m}}  \\ <br>
+  &amp;=&amp;
+  sx \frac{(1+x)^{-m}}{1-(1+x)^{-m}}  \\ <br>
+  &amp;=&amp;
+  sx \frac{1}{(1+x)^{m}-1}  \\ <br>
+  \end{eqnarray} \)</p>
+<p>となるので，</p>
+<p>nヶ月　：　\(\begin{eqnarray}   \Large　&amp;&amp;      s-sx \frac{1}{(1+x)^{m}-1} \frac{( 1+x )^{n}-1}{x} \\<br>
+  &amp;=&amp; s 
+\frac{(1+x)^{m}-1-( 1+x )^{n}+1}{(1+x)^{m}-1} \\<br>
+&amp;=&amp; s 
+\frac{(1+x)^{m}-( 1+x )^{n}}{(1+x)^{m}-1} \\<br>
+\end{eqnarray} \)</p>
+<p>となります．</p>
+<p>&nbsp;</p>
+<p><span class="large-red">金利</span>は，</p>
+<p>１　：　\( \Large      sx \)<br>
+２　：　\( \Large      sx- (W - s \cdot x)x \)<br>
+３　：　\( \Large      sx- (W - s \cdot x) [ 1+ ( 1+x )] x \)</p>
+<p>となるので，</p>
+<p>nヶ月　：　\( \Large      sx-(W - s \cdot x)x \displaystyle \sum_{i=1}^{n-1} ( 1+x )^{i-1} \)</p>
+<p>となるので（n-1，までがポイント），上と同様の等比数列の計算から，</p>
+<p>nヶ月　：　\( \Large      sx-(W - s \cdot x) [( 1+x )^{n-1}-1] \)</p>
+<p>となります．Wを消すと，</p>
+<p>nヶ月　：　\( \begin{eqnarray}　&amp;&amp; \Large      sx-(W - s \cdot x) [( 1+x )^{n-1}-1]　
+  \\<br>
+  &amp;=&amp; 
+  sx-sx \frac{( 1+x )^{n-1}-1}{(1+x)^{m}-1} 　\\<br>
+  &amp;=&amp; sx \left[ 1-
+  \frac{( 1+x )^{n-1}-1}{(1+x)^{m}-1} 　\right] \\<br>
+  &amp;=&amp; sx 
+\frac{ [(1+x)^{m}-1]-[( 1+x )^{n-1}-1]}{(1+x)^{m}-1} 　 \\ <br>
+&amp;=&amp; sx 
+\frac{ (1+x)^{m}-( 1+x )^{n-1}}{(1+x)^{m}-1} 　 \\<br>
+\end{eqnarray} \)  </p>
+<p>と，ｎヶ月目の金利を計算することができます．</p>
+<p>&nbsp;</p>
+<p class="Large-Blue">実際の計算</p>
+<p>実査に計算してみましょう．<br>
+　金利（年）：1.2％ (=0.1%/month)<br>
+　借入金：1200万円<br>
+　期間（年）：10年 (=120ヶ月）<br>
+として計算してみると，</p>
+<p>W=10.61699 万円，となりました．</p>
+<p><img src="Loan-02.png" width="807" height="449" alt=""/></p>
+<p><a href="https://keisan.casio.jp/exec/system/1256183644" target="_blank">こちら</a>，で計算した結果と一致します．</p>
+<p>また，エクセル自体に<span class="Blue">元利均等</span>の計算関数，PMTがあり，</p>
+<p>-PMT(金利（月），期間（月），借入金）</p>
+<p>で計算した値と一致しました．</p>
+<p>&nbsp;</p>
+<p><span class="style7"><a href="Loan-01.html"><img src="L-arrow.png" alt="l" width="57" height="34" /></a><a href="index.html"> <img src="TOP.png" alt="t" width="57" height="34" /></a></span><a href="Loan-03.html"><img src="R-arrow.png" alt="r" width="57" height="34" /></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

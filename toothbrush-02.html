@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>toothbrush</title>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+</script>
+
+<link href="160324.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+</head>
+
+<body>
+<p class="X-Large-Bold-RED"><span class="X-Large-Bold-RED">電動歯ブラシの振動数のチェック</span>-01</p>
+<p class="Large-Bold-Red">歯ブラシ付き</p>
+<p>電動歯ブラシの振動数のチェックを行ってみました．</p>
+<p>電動歯ブラシを使い続けて，約30年，いままで振動数など気にもしていませんでしたが，今まで使っていた機種の電池が寿命を迎え，新しい機種を見当している際に，その性能を評価する上での振動数に着目しました．</p>
+<p>元々，研究でも高速度カメラを使っていることもあり，高速度撮影には興味があります．<br />
+今までにも，スリンキー，ミルククラウンなどいろいろ試してきました．</p>
+<p> 機種：</p>
+<p> <a href="https://panasonic.jp/teeth/p-db/EW-DL34.html" target="_blank">ドルツ EW-DL34<br />
+</a> 2019年1月購入</p>
+<p> <a href="https://www.oralb.braun.co.jp/ja-jp/products/plaque-control" target="_blank">ブラウン オーラルB プラックコントロール<br />
+</a>2021年1月購入 </p>
+<p>撮影： </p>
+<p><a href="https://www.sony.jp/cyber-shot/products/DSC-RX100M5/" target="_blank">ソニー RX100V</a> (960fps）</p>
+<p>960fpsが正確かどうかは，時計（ストップウォッチ）を撮影して確認済です．</p>
+<p>&nbsp;</p>
+<p>まずは，動画から</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4la0yzGtkbs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p>このように，<br />
+　ドルツ：上下振動<br />
+　ブラウン：回転（約40度）<br />
+と方式が異なり，各企業のポリシーが異なることが分かりますね．</p>
+<p>どちらが効果的か私には分かりませんが，<br />
+　ドルツ：従来の歯磨きのような磨き方<br />
+　ブラウン：歯の表面を磨き上げるような磨き方<br />
+の違いがあるような気がします．</p>
+<p>また，機構的に考えると，<br />
+　ドルツ：往復運動がそのまま歯ブラシの運動となる<br />
+　ブラウン：モーターの回転方向の振幅を90度変換し，ブラシを回転（約40度）させている<br />
+違いあり，このことからもドルツの替えブラシが比較的安価で，ブラウンのものが比較的高価なことが分かります．</p>
+<p>&nbsp;</p>
+<p class="Large-Bold-Red">振動数</p>
+<p>さて，実際の振動数ですが，結果をまとめると，</p>
+<p>・ドルツ（毎分約31,000ブラシストローク） 　<br />
+　振動数：<span class="Large-Bold-Blue">120 Hz　（毎分7,200回）</span> 　<br />
+　振幅(Pk-Pk)　：　約0.68 mm </p>
+<p>・ブラウン　（毎分約48,800回） <br />
+　振動数：<span class="Large-Bold-Blue">76 Hz （毎分4,500回）</span><br />
+　回転角：約40度</p>
+<p> となりました． 公称とは大分違う結果に．．． </p>
+<p>ドルツは購入して2年もたつので，そのせいか？？ ブラウンは，そもそも毎分約48,800回が誤植なのか</p>
+<p class="Large-Bold-Red">波形</p>
+<p>実際の波形を解析する上で結構苦労しました，というのもmp4形式で保存されていたのですが，そのままでは，ImageJで読み込んでくれず，プラグインもうまく動きませんでした．</p>
+<p>そこで，<br />
+　Adobe Premiererでmp4ファイルを読み込む<br />
+　連続Tiffで保存<br />
+　連続TiffをImageJで読み込み<br /> 
+　可動部分をクロップ，グレースケール<br />
+　対象部分の平均値の変化を解析（3,000フレーム，マクロで自動化）<br /> 
+　Resultをcsvで保存<br />
+　エクセルで読み込み，平均値のみを抽出，テキストで保存<br />
+　Labviewで作ったプログラムで解析<br />
+という面倒な手順で作成しました．</p>
+<p>実際の波形は，</p>
+<p>・ドルツ</p>
+<p>実波形</p>
+<p><img src="toothbrush-01.png" width="788" height="327" alt=""/></p>
+<p>スペクトル</p>
+<p><img src="toothbrush-02.png" width="379" height="360" alt=""/></p>
+<p>・ブラウン</p>
+<p>実波形</p>
+<p><img src="toothbrush-03.png" width="787" height="272" alt=""/></p>
+<p>スペクトル</p>
+<p><img src="toothbrush-04.png" width="393" height="499" alt=""/></p>
+<p>となっています．</p>
+<p>プラウンのスペクトルに150Hzあたりのピークがあるのは，波形自体がそれほど美しくないので，倍波が出たのではと思います．</p>
+<p>&nbsp;</p>
+<p><span class="style7"><a href="3D-01.html"><img src="L-arrow.png" alt="l" width="57" height="34" border="0" /></a> <a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a></span><a href="3D-03.html"><img src="R-arrow.png" alt="r" width="57" height="34" /></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

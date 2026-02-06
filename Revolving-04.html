@@ -1,0 +1,301 @@
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+    processEscapes: true
+  },
+  TeX: {
+    extensions: ["mhchem.js"]
+  },
+  CommonHTML: {
+    matchFontHeight: false
+  }
+});
+</script>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Revolving</title>
+<link href="090413.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+</head>
+
+<body>
+<p class="X-Large-RED"><strong>リボ払い-04 </strong></p>
+<p>&nbsp;</p>
+<p><span class="Large-Red">・リボ払いの金利</span></p>
+<p>金利は，<a href="Revolving-02.html">ここ</a>にあるように，</p>
+<p>nヶ月　：　\(  \Large \displaystyle      sx 
+\frac{ (1+x)^{m}-( 1+x )^{n-1}}{(1+x)^{m}-1} 　  \) </p>
+<p>となりますので，ｍヶ月の総和を計算すればいいこととなります．</p>
+<p>\(  \Large \displaystyle \sum_{n=1}^m      s \cdot x 
+\frac{ (1+x)^{m}-( 1+x )^{n-1}}{(1+x)^{m}-1} 　  \) </p>
+<p>この時点で，総和のｍを実数ではなく，実際にかかった月（つまり，切り上げ，天井関数）で表すと，</p>
+<p>\(  \Large \displaystyle \sum_{n=1}^{\lceil m \rceil}     s \cdot x 
+\frac{ (1+x)^{m}-( 1+x )^{n-1}}{(1+x)^{m}-1} 　  \) </p>
+<p>\(  \Large \displaystyle = \frac{s \cdot x}{(1+x)^m -1 } \left\{ \lceil m \rceil \cdot (1+x)^m - \displaystyle \sum_{n=1}^{\lceil m \rceil}      ( 1+x )^{n-1} \right\}  \) </p>
+<p>\(  \Large \displaystyle \sum_{i=1}^m       (1+x)^{i-1} =\frac{(1+x)^m - 1 }{x}　  \) ，より，<a href="Loan-02.html">ここ</a></p>
+<p>\(  \Large \displaystyle = \frac{s \cdot x}{(1+x)^m -1 } \left\{ \lceil m \rceil \cdot (1+x)^m - \frac{(1+x)^{\lceil m \rceil} - 1 }{x} \right\}  \) </p>
+<p>ここで，</p>
+<p>\(  \Large \displaystyle  \lceil m \rceil   \) は，天井関数（切り上げ）</p>
+<p>として，実際の計算と比較してみると，</p>
+<p><span class="Blue">借入金：10万円<br />
+月々の支払い：5千円<br />
+金利（年）：15％<br />
+返済月：23.158ヶ月</span></p>
+<p>\(  \Large \displaystyle = \frac{100,000 \cdot 0.0125}{(1+0.0125)^{23.158} -1 } \left\{ 24 \cdot (1+0.0125)^{24} - \frac{(1+0.0125)^{24} - 1 }{0.0125} \right\}  = \color{red}{16,368}\) </p>
+<p>
+  <!--td {border: 1px solid #cccccc;}br {mso-data-placement:same-cell;}-->
+</p>
+<table width="572" border="1" cellpadding="0" cellspacing="0" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+  <colgroup>
+    <col width="100"/>
+    <col width="100"/>
+    <col width="100"/>
+    <col width="100"/>
+    <col width="154"/>
+    <col width="154"/>
+    <col width="154"/>
+  </colgroup>
+  <tbody>
+    <tr>
+      <td width="21" style="text-align: right"></td>
+      <td width="38" style="text-align: right"></td>
+      <td width="122" style="text-align: right" data-sheets-value="{'1':2,'2':'支払いの残り'}">支払いの残り</td>
+      <td width="109" style="text-align: right" data-sheets-value="{'1':2,'2':'金利手数料'}">金利手数料</td>
+      <td width="193" style="text-align: right" data-sheets-value="{'1':2,'2':'金利を差し引いた支払額'}">金利を差し引いた支払額</td>
+      <td width="75" style="text-align: right" data-sheets-value="{'1':2,'2':'残高'}">残高</td>
+    </tr>
+    <tr>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':1}">1</td>
+      <td style="text-align: right" data-sheets-value="{'1':2,'2':'ヶ月'}">ヶ月</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':100000}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[-5]C[-1]">¥100,000</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':1250}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[0]C[-1]*R3C4">¥1,250</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':3598.664804695117}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R2C2-R[0]C[-2]">¥3,599</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':96401.33519530488}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[0]C[-4]-R[0]C[-1]">¥96,401</td>
+    </tr>
+    <tr>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':2}" data-sheets-formula="=R[-1]C[0]+1">2</td>
+      <td style="text-align: right" data-sheets-value="{'1':2,'2':'ヶ月'}">ヶ月</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':96401.33519530488}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[-1]C[4]">¥96,401</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':1205.0166899413111}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[0]C[-1]*R3C4">¥1,205</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':3643.6481147538057}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R2C2-R[0]C[-2]">¥3,644</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':92757.68708055108}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[0]C[-4]-R[0]C[-1]">¥92,758</td>
+    </tr>
+    <tr>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':3}" data-sheets-formula="=R[-1]C[0]+1">3</td>
+      <td style="text-align: right" data-sheets-value="{'1':2,'2':'ヶ月'}">ヶ月</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':92757.68708055108}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[-1]C[4]">¥92,758</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':1159.4710885068887}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[0]C[-1]*R3C4">¥1,159</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':3689.193716188228}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R2C2-R[0]C[-2]">¥3,689</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':89068.49336436286}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[0]C[-4]-R[0]C[-1]">¥89,068</td>
+    </tr>
+    <tr>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':4}" data-sheets-formula="=R[-1]C[0]+1">4</td>
+      <td style="text-align: right" data-sheets-value="{'1':2,'2':'ヶ月'}">ヶ月</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':89068.49336436286}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[-1]C[4]">¥89,068</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':1113.3561670545357}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[0]C[-1]*R3C4">¥1,113</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':3735.308637640581}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R2C2-R[0]C[-2]">¥3,735</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':85333.18472672228}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[0]C[-4]-R[0]C[-1]">¥85,333</td>
+    </tr>
+    <tr>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':5}" data-sheets-formula="=R[-1]C[0]+1">5</td>
+      <td style="text-align: right" data-sheets-value="{'1':2,'2':'ヶ月'}">ヶ月</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':85333.18472672228}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[-1]C[4]">¥85,333</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':1066.6648090840285}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[0]C[-1]*R3C4">¥1,067</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':3781.9999956110883}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R2C2-R[0]C[-2]">¥3,782</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':81551.18473111119}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[0]C[-4]-R[0]C[-1]">¥81,551</td>
+    </tr>
+    <tr>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':6}" data-sheets-formula="=R[-1]C[0]+1">6</td>
+      <td style="text-align: right" data-sheets-value="{'1':2,'2':'ヶ月'}">ヶ月</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':81551.18473111119}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[-1]C[4]">¥81,551</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':1019.38980913889}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[0]C[-1]*R3C4">¥1,019</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':3829.2749955562267}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R2C2-R[0]C[-2]">¥3,829</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':77721.90973555496}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[0]C[-4]-R[0]C[-1]">¥77,722</td>
+    </tr>
+    <tr>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':7}" data-sheets-formula="=R[-1]C[0]+1">7</td>
+      <td style="text-align: right" data-sheets-value="{'1':2,'2':'ヶ月'}">ヶ月</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':77721.90973555496}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[-1]C[4]">¥77,722</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':971.523871694437}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[0]C[-1]*R3C4">¥972</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':3877.14093300068}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R2C2-R[0]C[-2]">¥3,877</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':73844.76880255427}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[0]C[-4]-R[0]C[-1]">¥73,845</td>
+    </tr>
+    <tr>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':8}" data-sheets-formula="=R[-1]C[0]+1">8</td>
+      <td style="text-align: right" data-sheets-value="{'1':2,'2':'ヶ月'}">ヶ月</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':73844.76880255427}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[-1]C[4]">¥73,845</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':923.0596100319285}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[0]C[-1]*R3C4">¥923</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':3925.6051946631883}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R2C2-R[0]C[-2]">¥3,926</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':69919.16360789108}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[0]C[-4]-R[0]C[-1]">¥69,919</td>
+    </tr>
+    <tr>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':9}" data-sheets-formula="=R[-1]C[0]+1">9</td>
+      <td style="text-align: right" data-sheets-value="{'1':2,'2':'ヶ月'}">ヶ月</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':69919.16360789108}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[-1]C[4]">¥69,919</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':873.9895450986386}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[0]C[-1]*R3C4">¥874</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':3974.675259596478}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R2C2-R[0]C[-2]">¥3,975</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':65944.4883482946}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[0]C[-4]-R[0]C[-1]">¥65,944</td>
+    </tr>
+    <tr>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':10}" data-sheets-formula="=R[-1]C[0]+1">10</td>
+      <td style="text-align: right" data-sheets-value="{'1':2,'2':'ヶ月'}">ヶ月</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':65944.4883482946}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[-1]C[4]">¥65,944</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':824.3061043536826}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[0]C[-1]*R3C4">¥824</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':4024.358700341434}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R2C2-R[0]C[-2]">¥4,024</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':61920.12964795317}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[0]C[-4]-R[0]C[-1]">¥61,920</td>
+    </tr>
+    <tr>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':11}" data-sheets-formula="=R[-1]C[0]+1">11</td>
+      <td style="text-align: right" data-sheets-value="{'1':2,'2':'ヶ月'}">ヶ月</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':61920.12964795317}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[-1]C[4]">¥61,920</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':774.0016205994147}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[0]C[-1]*R3C4">¥774</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':4074.663184095702}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R2C2-R[0]C[-2]">¥4,075</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':57845.46646385746}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[0]C[-4]-R[0]C[-1]">¥57,845</td>
+    </tr>
+    <tr>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':12}" data-sheets-formula="=R[-1]C[0]+1">12</td>
+      <td style="text-align: right" data-sheets-value="{'1':2,'2':'ヶ月'}">ヶ月</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':57845.46646385746}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[-1]C[4]">¥57,845</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':723.0683307982183}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[0]C[-1]*R3C4">¥723</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':4125.596473896899}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R2C2-R[0]C[-2]">¥4,126</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':53719.86998996056}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[0]C[-4]-R[0]C[-1]">¥53,720</td>
+    </tr>
+    <tr>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':13}" data-sheets-formula="=R[-1]C[0]+1">13</td>
+      <td style="text-align: right" data-sheets-value="{'1':2,'2':'ヶ月'}">ヶ月</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':53719.86998996056}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[-1]C[4]">¥53,720</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':671.4983748745071}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[0]C[-1]*R3C4">¥671</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':4177.16642982061}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R2C2-R[0]C[-2]">¥4,177</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':49542.703560139955}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[0]C[-4]-R[0]C[-1]">¥49,543</td>
+    </tr>
+    <tr>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':14}" data-sheets-formula="=R[-1]C[0]+1">14</td>
+      <td style="text-align: right" data-sheets-value="{'1':2,'2':'ヶ月'}">ヶ月</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':49542.703560139955}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[-1]C[4]">¥49,543</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':619.2837945017495}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[0]C[-1]*R3C4">¥619</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':4229.381010193367}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R2C2-R[0]C[-2]">¥4,229</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':45313.32254994659}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[0]C[-4]-R[0]C[-1]">¥45,313</td>
+    </tr>
+    <tr>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':15}" data-sheets-formula="=R[-1]C[0]+1">15</td>
+      <td style="text-align: right" data-sheets-value="{'1':2,'2':'ヶ月'}">ヶ月</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':45313.32254994659}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[-1]C[4]">¥45,313</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':566.4165318743325}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[0]C[-1]*R3C4">¥566</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':4282.248272820784}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R2C2-R[0]C[-2]">¥4,282</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':41031.07427712581}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[0]C[-4]-R[0]C[-1]">¥41,031</td>
+    </tr>
+    <tr>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':16}" data-sheets-formula="=R[-1]C[0]+1">16</td>
+      <td style="text-align: right" data-sheets-value="{'1':2,'2':'ヶ月'}">ヶ月</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':41031.07427712581}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[-1]C[4]">¥41,031</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':512.8884284640726}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[0]C[-1]*R3C4">¥513</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':4335.776376231044}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R2C2-R[0]C[-2]">¥4,336</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':36695.297900894766}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[0]C[-4]-R[0]C[-1]">¥36,695</td>
+    </tr>
+    <tr>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':17}" data-sheets-formula="=R[-1]C[0]+1">17</td>
+      <td style="text-align: right" data-sheets-value="{'1':2,'2':'ヶ月'}">ヶ月</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':36695.297900894766}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[-1]C[4]">¥36,695</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':458.6912237611846}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[0]C[-1]*R3C4">¥459</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':4389.973580933933}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R2C2-R[0]C[-2]">¥4,390</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':32305.324319960833}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[0]C[-4]-R[0]C[-1]">¥32,305</td>
+    </tr>
+    <tr>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':18}" data-sheets-formula="=R[-1]C[0]+1">18</td>
+      <td style="text-align: right" data-sheets-value="{'1':2,'2':'ヶ月'}">ヶ月</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':32305.324319960833}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[-1]C[4]">¥32,305</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':403.81655399951046}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[0]C[-1]*R3C4">¥404</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':4444.848250695606}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R2C2-R[0]C[-2]">¥4,445</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':27860.476069265227}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[0]C[-4]-R[0]C[-1]">¥27,860</td>
+    </tr>
+    <tr>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':19}" data-sheets-formula="=R[-1]C[0]+1">19</td>
+      <td style="text-align: right" data-sheets-value="{'1':2,'2':'ヶ月'}">ヶ月</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':27860.476069265227}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[-1]C[4]">¥27,860</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':348.25595086581535}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[0]C[-1]*R3C4">¥348</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':4500.408853829302}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R2C2-R[0]C[-2]">¥4,500</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':23360.067215435927}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[0]C[-4]-R[0]C[-1]">¥23,360</td>
+    </tr>
+    <tr>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':20}" data-sheets-formula="=R[-1]C[0]+1">20</td>
+      <td style="text-align: right" data-sheets-value="{'1':2,'2':'ヶ月'}">ヶ月</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':23360.067215435927}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[-1]C[4]">¥23,360</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':292.0008401929491}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[0]C[-1]*R3C4">¥292</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':4556.663964502168}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R2C2-R[0]C[-2]">¥4,557</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':18803.40325093376}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[0]C[-4]-R[0]C[-1]">¥18,803</td>
+    </tr>
+    <tr>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':21}" data-sheets-formula="=R[-1]C[0]+1">21</td>
+      <td style="text-align: right" data-sheets-value="{'1':2,'2':'ヶ月'}">ヶ月</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':18803.40325093376}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[-1]C[4]">¥18,803</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':235.04254063667202}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[0]C[-1]*R3C4">¥235</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':4613.622264058445}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R2C2-R[0]C[-2]">¥4,614</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':14189.780986875314}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[0]C[-4]-R[0]C[-1]">¥14,190</td>
+    </tr>
+    <tr>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':22}" data-sheets-formula="=R[-1]C[0]+1">22</td>
+      <td style="text-align: right" data-sheets-value="{'1':2,'2':'ヶ月'}">ヶ月</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':14189.780986875314}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[-1]C[4]">¥14,190</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':177.37226233594143}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[0]C[-1]*R3C4">¥177</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':4671.292542359175}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R2C2-R[0]C[-2]">¥4,671</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':9518.488444516139}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[0]C[-4]-R[0]C[-1]">¥9,518</td>
+    </tr>
+    <tr>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':23}" data-sheets-formula="=R[-1]C[0]+1">23</td>
+      <td style="text-align: right" data-sheets-value="{'1':2,'2':'ヶ月'}">ヶ月</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':9518.488444516139}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[-1]C[4]">¥9,518</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':118.98110555645174}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[0]C[-1]*R3C4">¥119</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':4729.683699138665}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R2C2-R[0]C[-2]">¥4,730</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':4788.804745377473}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[0]C[-4]-R[0]C[-1]">¥4,789</td>
+    </tr>
+    <tr>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':24}" data-sheets-formula="=R[-1]C[0]+1">24</td>
+      <td style="text-align: right" data-sheets-value="{'1':2,'2':'ヶ月'}">ヶ月</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':4788.804745377473}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[-1]C[4]">¥4,789</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':59.86005931721842}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[0]C[-1]*R3C4">¥60</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':4788.804745377898}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R2C2-R[0]C[-2]">¥4,789</td>
+      <td style="text-align: right" data-sheets-value="{'1':3,'3':-4.247340257279575e-10}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=R[0]C[-4]-R[0]C[-1]">¥0</td>
+    </tr>
+    <tr>
+      <td style="text-align: right"></td>
+      <td style="text-align: right"></td>
+      <td style="text-align: right" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}"></td>
+      <td style="text-align: right" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}"></td>
+      <td style="text-align: right" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}"></td>
+      <td style="text-align: right" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}"></td>
+    </tr>
+    <tr>
+      <td style="text-align: right"></td>
+      <td style="text-align: right"></td>
+      <td style="text-align: right" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}"></td>
+      <td bgcolor="#EDFF00" style="text-align: right" data-sheets-value="{'1':3,'3':16367.955312682378}" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}" data-sheets-formula="=sum(R[-25]C[0]:R[-2]C[0])">¥16,368</td>
+      <td style="text-align: right" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}"></td>
+      <td style="text-align: right" data-sheets-numberformat="{'1':4,'2':'[$¥-411]#,##0','3':1}"></td>
+    </tr>
+  </tbody>
+</table>
+<p>と見事一致しました！なぜここだけ返済期間を切り上げるのかは．．．．すいません，きちんと説明できません．．．</p>
+<p>とにもかくにも，金利の総額は，</p>
+<p>&nbsp;</p>
+<p>\(  \Large \displaystyle \color{red}{ \frac{s \cdot x}{(1+x)^m -1 } \left\{ \lceil m \rceil \cdot (1+x)^m - \frac{(1+x)^{\lceil m \rceil} - 1 }{x} \right\}}  \) </p>
+<p>となることが分かります．</p>
+<p>注）　</p>
+<p>リボ払いは，決して違法ではなく，毎月の支払額が一定というメリットがあります．</p>
+<p>住宅ローンでよく使われる方法ですね（手数料が違うけど）</p>
+<p>きちんとその原理を理解して使っていきたいですね．</p>
+<p>&nbsp;</p>
+<p><span class="style7"><a href="Revolving-03.html"><img src="L-arrow.png" alt="l" width="57" height="34" /></a><a href="index.html"> <img src="TOP.png" alt="t" width="57" height="34" /></a></span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

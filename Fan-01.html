@@ -1,0 +1,418 @@
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+    processEscapes: true
+  },
+  TeX: {
+    extensions: ["mhchem.js"]
+  },
+  CommonHTML: {
+    matchFontHeight: false
+  }
+});
+</script>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+
+
+	
+
+
+
+<link href="160324.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+<title>Fan</title>
+</head>
+
+<body>
+<p class="X-Large-Bold-RED">扇風機-電力消費量</p>
+<p>&nbsp;</p>
+<p>今年の夏は暑いです．エアコンも使いたいですが，電気代が．．．ということで扇風機の電力消費量を確認しました．</p>
+<p>まずは，単位のおさらいから</p>
+<p class="Red-Bold">　W　：　電力を表し，電気が1秒間にする仕事です</p>
+<p class="Red-Bold">　Wh　：　１Wの電力を1時間使った時の電力量です．</p>
+<p class="Red-Bold">　1 kWh = 1000 Wh</p>
+<p>です．一応</p>
+<p>　<span class="Large-Bold-Blue">28　円/kWh</span></p>
+<p>で計算しています．</p>
+<p>消費電力は，<a href="https://www.ratocsystems.com/products/subpage/btwattch1.html" target="_blank">Bluetoothワットチェッカー</a>，を使っています，前のタイプはツイッターに挙げるタイプでしたが，これはスマホでリアルタイムに記録できる製品です（後継機種が出ていますが）</p>
+<p>&nbsp;</p>
+<p>今回確認した扇風機は，</p>
+<p>　DC :　<a href="https://book.yamazen.co.jp/product/detail/I00005660" target="_blank">ヤマゼン YAMAZEN YLCX-HD30-WS [DCリビング扇風機]　販売終了時の価格：	￥9,420（税込）</a>　23W</p>
+<p>　AC : Morita MF-317AR 43/47W</p>
+<p>　AC : <a href="https://jp.sharp/support/safety/doc/sharp_fan_list.pdf" target="_blank">Sharp PJ-K3LM-W (1999)</a> 39/43W</p>
+<p><img src="Fan-02.jpg" width="800" height="485" alt=""/></p>
+<p><img src="Fan-01.jpg" width="435" height="631" alt=""/></p>
+<p>と一番古いのはシャープでもう<span class="Blue-Bold">四半世紀</span>使っていますが現役です．個人的にはシャープの扇風機の風が一番好きです．しかもMoritaよりも消費電力が少ない．</p>
+<p>&nbsp;</p>
+<p class="Large-Bold-Red">・消費電力比較</p>
+<p>まずは，<span class="Large-Bold-Blue">DCの山善</span></p>
+<p><img src="Fan-Yamazen.png" width="822" height="439" alt=""/></p>
+<p>5段階の速度調節があり，首振り機能も付いています．</p>
+<table width="404" border="1">
+  <col width="96" span="3">
+  <col width="92">
+  <tr>
+    <td>&nbsp;</td>
+    <td align="right">Mode</td>
+    <td align="right">W</td>
+    <td align="right">円/h</td>
+  </tr>
+  <tr>
+    <td width="96">normal</td>
+    <td align="right" width="96">1</td>
+    <td align="right" width="92">1.87</td>
+    <td align="right" width="92">0.052</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td align="right">2</td>
+    <td align="right">3.81</td>
+    <td align="right">0.107</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td align="right">3</td>
+    <td align="right">6.77</td>
+    <td align="right">0.190</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td align="right">4</td>
+    <td align="right">12.31</td>
+    <td align="right">0.345</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td align="right">5</td>
+    <td align="right">20.02</td>
+    <td align="right">0.561</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>swing</td>
+    <td align="right">1</td>
+    <td align="right">3.48</td>
+    <td align="right">0.097</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td align="right">2</td>
+    <td align="right">5.19</td>
+    <td align="right">0.145</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td align="right">3</td>
+    <td align="right">7.82</td>
+    <td align="right">0.219</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td align="right">4</td>
+    <td align="right">13.68</td>
+    <td align="right">0.383</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td align="right">5</td>
+    <td align="right">21.80</td>
+    <td align="right">0.610</td>
+  </tr>
+</table>
+<p>結果を見ると，1から５のモードが比例しているわけではないようです（風力をチェックしていないので電力そのものが風力に比例しているかはわかりませんが）．</p>
+<p>面白いことに<span class="Blue">首振りすると電力消費が上がる</span>こと．DC扇風機は別の制御で首振りしているのですね．AC扇風機はモーターの回転の一部を首振りにしていたはずです．</p>
+<p>また，首振りの両端で電力がちょっと落ちていることがわかります．</p>
+<p>商品のスペックは，モード５の首振りという最大値を示しているようです．</p>
+<p>&nbsp;</p>
+<p>次は，<span class="Large-Bold-Blue">ACのMorita</span></p>
+<p><img src="Fan-Morita.png" width="939" height="407" alt=""/></p>
+<p>弱，中，強，という3段階，それにリズム，イオン（謎）があります．</p>
+<p>なぜか，スタート，モードの変更をすると最初高めの電力が必要となり，その後安定します．弱，中，強と直線関係にありそうです．</p>
+<p>リズムは，<br>
+　弱リズム：０と弱<br>
+　中リズム：０と弱と中<br>
+　強リズム：弱と中と強<br>
+を行き来するようです，周期的でなくランダムの様子（1/f？）</p>
+<p>首振りは予想したように，首振りしないときに比べて電力に差はありませんでした（ファンの回転数に関してはわかりません）</p>
+<p>消費電力は，</p>
+<table width="339" border="1">
+  <col width="96" span="2">
+  <col width="151">
+  <col width="96" span="3">
+  <tr>
+    <td>Mode </td>
+    <td>&nbsp;</td>
+    <td align="right">W</td>
+    <td align="right">円/h</td>
+  </tr>
+  <tr>
+    <td width="72">normal</td>
+    <td width="49">弱</td>
+    <td align="right" width="94">35.40</td>
+    <td align="right" width="96">0.991</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>中</td>
+    <td align="right">40.56</td>
+    <td align="right">1.136</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>強</td>
+    <td align="right">48.47</td>
+    <td align="right">1.357</td>
+  </tr>
+  <tr>
+    <td>リズム</td>
+    <td>弱</td>
+    <td align="right">23.95</td>
+    <td align="right">0.671</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>中</td>
+    <td align="right">33.51</td>
+    <td align="right">0.938</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>強</td>
+    <td align="right">40.95</td>
+    <td align="right">1.147</td>
+  </tr>
+  <tr>
+    <td>イオン</td>
+    <td>弱</td>
+    <td align="right">33.05</td>
+    <td align="right">0.925</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>中</td>
+    <td align="right">39.27</td>
+    <td align="right">1.100</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>強</td>
+    <td align="right">47.44</td>
+    <td align="right">1.328</td>
+  </tr>
+  <tr>
+    <td>首振り</td>
+    <td>弱</td>
+    <td align="right">32.65</td>
+    <td align="right">0.914</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>中</td>
+    <td align="right">38.65</td>
+    <td align="right">1.082</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>強</td>
+    <td align="right">46.67</td>
+    <td align="right">1.307</td>
+  </tr>
+</table>
+<p>やはり，DCに比べて明らかに<span class="Blue-Bold">消費電力が高い</span>です．</p>
+<p>&nbsp;</p>
+<p>次は<span class="Large-Bold-Blue">ACシャープ</span></p>
+<p><img src="Fan-Sharp.png" width="867" height="399" alt=""/></p>
+<p>これも，弱，中，強，という3段階，それに<span class="Red-Bold">1/f（ピンクノイズ？）</span>があります．</p>
+<p>1/f ゆらぎ，一時はやりましたが，最近聞かないですね．．．</p>
+<p>ぜか，スタート，モードの変更をすると最初高めの電力が必要となり，その後安定します．弱，中，強と直線関係にありそうです．</p>
+<p>リズムは，<br>
+  ０と弱と中<br>
+  を行き来するようです，弱中強でその頻度が変わるようです．周期的でなくランダムの様子でしょうか？でも計測時間が短いので周波数解析，自己相関解析ができませんでした．</p>
+<p>首振りは予想したように，首振りしないときに比べて電力に差はありませんでした（ファンの回転数に関してはわかりません）</p>
+<p>消費電力は，</p>
+<table width="352" border="1">
+  <col width="96" span="5">
+  <tr>
+    <td>Mode</td>
+    <td>&nbsp;</td>
+    <td align="right">W</td>
+    <td align="right">円/h</td>
+  </tr>
+  <tr>
+    <td width="130">AC_sharp_normal</td>
+    <td width="49">弱</td>
+    <td align="right" width="62">28.10</td>
+    <td align="right" width="83">0.787</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>中</td>
+    <td align="right">34.83</td>
+    <td align="right">0.975</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>強</td>
+    <td align="right">41.59</td>
+    <td align="right">1.165</td>
+  </tr>
+  <tr>
+    <td>AC_sharp_1/f</td>
+    <td>弱</td>
+    <td align="right">15.00</td>
+    <td align="right">0.420</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>中</td>
+    <td align="right">22.59</td>
+    <td align="right">0.633</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>強</td>
+    <td align="right">25.89</td>
+    <td align="right">0.725</td>
+  </tr>
+  <tr>
+    <td>AC_sharp_swing</td>
+    <td>弱</td>
+    <td align="right">27.40</td>
+    <td align="right">0.767</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>中</td>
+    <td align="right">34.03</td>
+    <td align="right">0.953</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>強</td>
+    <td align="right">41.80</td>
+    <td align="right">1.170</td>
+  </tr>
+</table>
+<p>とMoritaに比べて低い値となっています．25年選手なのに<span class="Red-Bold">優秀</span>です．</p>
+<p>&nbsp;</p>
+<p class="Large-Bold-Red">モードと金額</p>
+<p>3つの扇風機のモードと金額をグラフ化してみました．</p>
+<p>各製品の強さは必ずしも同一の風量でないので，直接的な比較にはなりませんが，参考まで．</p>
+<p><img src="Fan-Result.png" width="944" height="452" alt=""/></p>
+<p>これを見ても明らかなように，<span class="Red-Bold">DCモーターの金額の低さ</span>が際立っています．二次曲線なのが不思議．</p>
+<p>首振りにすると若干上がりますが，まあそれほど大きくはないでしょう．</p>
+<p>ACモーターはシャープという25年選手の検討が際立っています．</p>
+<p>Moritaはなぜか首振りの場合に金額が若干下がっています．．．</p>
+<p>ただ，ACモーターも<span class="Red-Bold">リズム，1/f，にするとだいぶ金額が下がります</span>．まあ間欠運転なので当然ですが．．．</p>
+<p>&nbsp;</p>
+<p class="Large-Bold-Red">DCモーターは元を取れるか？</p>
+<p>実際に，高めの値段のDC扇風機を購入して元が取れるかをシミュレートしてみました．</p>
+<p class="Blue-Bold">　1日：4時間<br>
+　1年：4か月</p>
+<p>で計算してみました．</p>
+<table width="1123" border="1">
+  <col width="147">
+  <col width="77" span="3">
+  <col width="98">
+  <col width="86">
+  <col width="158">
+  <col width="154">
+  <col width="158">
+  <tr>
+    <td width="158"></td>
+    <td width="109"><p>金額</p>
+    <p>（円/1時間）</p></td>
+    <td width="18"></td>
+    <td width="87">1日当たり<br>
+      の時間</td>
+    <td width="84">月の費用<br>
+      （円）</td>
+    <td width="180">年間4か月使用した場合</td>
+    <td width="155">DC_swingとの差額<br>
+      （月）</td>
+    <td width="200">DC_swingとの差額<br>
+      （4か月）</td>
+  </tr>
+  <tr>
+    <td>DC</td>
+    <td align="right">0.05</td>
+    <td></td>
+    <td align="right">4</td>
+    <td align="right">6.51</td>
+    <td align="right">26.03</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>DC_swing</td>
+    <td align="right">0.10</td>
+    <td></td>
+    <td align="right">4</td>
+    <td align="right">12.09</td>
+    <td align="right">48.35</td>
+    <td>　</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>AC_Sharp</td>
+    <td align="right">0.79</td>
+    <td></td>
+    <td align="right">4</td>
+    <td align="right">97.55</td>
+    <td align="right">390.20</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>AC_Sharp_1/f</td>
+    <td align="right">0.42</td>
+    <td></td>
+    <td align="right">4</td>
+    <td align="right">52.07</td>
+    <td align="right">208.29</td>
+    <td align="right">39.99 </td>
+    <td align="right">159.94 </td>
+  </tr>
+  <tr>
+    <td>AC_morita</td>
+    <td align="right">0.99</td>
+    <td></td>
+    <td align="right">4</td>
+    <td align="right">122.90</td>
+    <td align="right">491.60</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>AC_morita_リズム</td>
+    <td align="right">0.67</td>
+    <td></td>
+    <td align="right">4</td>
+    <td align="right">83.17</td>
+    <td align="right">332.67</td>
+    <td align="right">71.08 </td>
+    <td align="right">284.32 </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>この程度の使用頻度でしたら，<span class="Large-Bold-Blue">年間150～300円</span>，となると，あえてDCを選ぶ必要性はないのかも．．．．</p>
+<p>それより，<span class="Red-Bold">静粛性</span>，<span class="Red-Bold">方向</span>（サーキュレーターのように使いたい），で選んだ方がいいのかも．</p>
+<p>今回使用したDCモーターも首振りすると，コクコク，音がして寝室では使いづらい．．．（もう古いのかもしれませんが．．）</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span class="style7"><a href="Tool.html"><img src="TOP.png" alt="t" width="57" height="34" /></a></span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>
