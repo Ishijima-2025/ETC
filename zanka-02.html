@@ -1,0 +1,96 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>PCP plan</title>
+
+<script type="text/javascript"
+
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+
+</script>
+
+
+<link href="160324.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+
+</head>
+
+
+
+<body>
+
+<h1 class="X-Large-Bold-Blue">残クレの計算-02</h1>
+<h1>&nbsp;</h1>
+<p class="Large-Bold-Red">・実際の計算</p>
+<p class="Blue-Bold">金利（年）：<span class="Large-Bold-Blue">5 %</span> (=0.05)<br />
+金利（月）：0.00417 (= 0.05/12) <br />
+返済期間（年）：2<br />
+返済期間（月）：<span class="Large-Bold-Blue">24</span> (= 2 ×12) <br />
+返済金額：<span class="X-Large-Bold-Blue">100万円</span> (=1,000,000)<br />
+毎月の返済金額（通常）：W <br />
+毎月の返済額（残クレ）：W<sub>z</sub> <br />
+残　価（％）：　<span class="Large-Bold-Blue">40</span></p>
+<p>とします．</p>
+<p>&nbsp;</p>
+<p class="Large-Bold-Blue">・<span class="Large-Bold-Blue">毎月の返済額</span></p>
+<p><span class="Large-Bold-Blue">通常ローンの場合</span><br />
+</p>
+<p>\(\Large     \displaystyle   W = \frac{sx}{1-(1+x)^{-m}} \)</p>
+<p>\(\Large     \displaystyle    = \frac{1,000,000 \times 0.05/12}{1-(1+ 0.05/12)^{-24}} = 43,871 \)</p>
+<p><span class="Large-Bold-Blue">残クレの場合</span></p>
+<p>\(\Large     \displaystyle W_z=sx \left[  \frac{(1+x)^m  - \alpha}{(1+x)^m -1}\right] \)</p>
+<p>\(\Large     \displaystyle =1,000,000 \times 0.05/12 \left[  \frac{(1+0.05/12 )^m  - 0.4}{(1+0.05/12 )^{24} -1}\right] = 27,990 \)</p>
+<p>となります（小数点以下は四捨五入）．</p>
+<p class="Red-Bold"><span class="X-Large-Bold-RED">4万4千円弱</span>と<span class="X-Large-Bold-RED">2万8千円弱</span>，たしかに残クレは月々の支払いが安くなります．</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p class="Large-Bold-Blue"> ・金利合計</p>
+<p class="Large-Bold-Blue">通常ローンの場合</p>
+<p>\(\Large     \displaystyle   s  \ \left\{ \frac{mx }{1 - (1+x)^{-m} } - 1 \right\} \)</p>
+<p>\(\Large     \displaystyle  = 1,000,000 \times  \ \left\{ \frac{24 \times 0.05/12 }{1 - (1+ 0.05/12)^{-24} } - 1 \right\} = 52,913 \)</p>
+<p class="Large-Bold-Blue">残クレの場合</p>
+<p><span class="Large-Bold-Blue">毎月の返済額</span></p>
+<p>\(\Large     \displaystyle sx \left[  \frac{(1+x)^m  - \alpha}{(1+x)^m -1}\right] \)</p>
+<p>\(\Large     \displaystyle = 1,000,000 \times 0.05/12 \times \left[  \frac{(1+0.05/12)^{24}  - 0.4}{(1+0.05/12)^{24} -1}\right] = 71,748 \)</p>
+<p>と<span class="Large-Bold-Blue">2年間で約</span><span class="X-Large-Bold-Blue">2万円</span><span class="Large-Bold-Blue">もの金利の差</span>が生じます．この2万円の差をどう考えるか．．．．</p>
+<p>&nbsp;</p>
+<p>もし，実際にベルファイア（750万円）の場合は，</p>
+<p><span class="Blue-Bold">金利（年）：<span class="Large-Bold-Blue">5 %</span> (=0.05)<br />
+金利（月）：0.00417 (= 0.05/12) <br />
+返済期間（年）：2<br />
+返済期間（月）：<span class="Large-Bold-Blue">24</span> (= 2 ×12) <br />
+返済金額：<span class="X-Large-Bold-Blue">750万円</span> (=1,000,000)<br />
+毎月の返済金額（通常）：W <br />
+毎月の返済額（残クレ）：W<sub>z</sub> <br />
+残　価（％）：　<span class="Large-Bold-Blue">40</span></span></p>
+<p>&nbsp;</p>
+<p class="Large-Bold-Blue">・毎月の返済額</p>
+<p><span class="Large-Bold-Blue">通常ローンの場合</span>　：　329,035<br />
+</p>
+<p><span class="Large-Bold-Blue">残クレの場合</span>　：　209,921</p>
+<p>&nbsp;</p>
+<p><span class="Large-Bold-Blue">・金利合計</span></p>
+<p><span class="Large-Bold-Blue">通常ローンの場合</span>　：　396,850</p>
+<p><span class="Large-Bold-Blue">残クレの場合</span>　：　538,110</p>
+<p>&nbsp;</p>
+<p>と<span class="Red-Bold">月々の支払いは12万円程度安く</span>なりますが，<span class="Blue-Bold">金利合計は14万円も差</span>が出てしまいます．．．．</p>
+<p>つぎに，100万円の場合の実際の毎月の遷移を見ていきましょう</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<p><span class="style10"><a href="zanka-01.html"><img src="L-arrow.png" alt="l" width="57" height="34" /></a> <a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a> <a href="zanka-03.html"><img src="R-arrow.png" alt="r" width="57" height="34" /></a></span></p>
+
+</body>
+
+</html>
+

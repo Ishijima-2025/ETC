@@ -1,0 +1,398 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>PCP plan</title>
+
+<script type="text/javascript"
+
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+
+</script>
+
+
+<link href="160324.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+
+</head>
+
+
+
+<body>
+
+<h1 class="X-Large-Bold-Blue">残クレの計算-05</h1>
+<h1>&nbsp;</h1>
+<p>実際には，返却しちゃえば何も問題ないのですが，</p>
+<p>　<span class="Large-Bold-Red">気に入ってしまった，残価もローンで返却して行きたい：更に同じ返済額で完済したい</span></p>
+<p>という場合，どうしたらいいかを考えていきます．</p>
+<p>&nbsp;</p>
+<p class="Large-Bold-Red">・実際の数値の変化</p>
+<p class="Blue-Bold">金利（年）：<span class="Large-Bold-Blue">5 %</span> (=0.05)<br />
+金利（月）：0.00417 (= 0.05/12) <br />
+返済期間（年）：2<br />
+返済期間（月）：<span class="Large-Bold-Blue">24</span> (= 2 ×12) <br />
+返済金額：<span class="X-Large-Bold-Blue">100万円</span> (=1,000,000)<br />
+毎月の返済金額（通常）：W <br />
+毎月の返済額（残クレ）：W<sub>z</sub> <br />
+残　価（％）：　<span class="Large-Bold-Blue">40</span></p>
+<p>としたばあい，残価率が40％なので，<span class="Blue-Bold">40万円残っています</span>．</p>
+<p>&nbsp;</p>
+<p class="Large-Bold-Blue">残クレ</p>
+<table xmlns="http://www.w3.org/1999/xhtml" cellspacing="0" cellpadding="0" dir="ltr" border="1">
+  <col width="96" />
+  <col width="99" />
+  <col width="107" />
+  <col width="160" span="2" />
+  <col width="107" />
+  <tr>
+    <td width="96"></td>
+    <td width="145">残クレ返却額(月）</td>
+    <td width="112">残金</td>
+    <td width="116">金利分発生額</td>
+    <td width="127">残クレ金利総額</td>
+    <td width="104">残金</td>
+  </tr>
+  <tr>
+    <td style="text-align:right; padding-right:10px;">1</td>
+    <td style="text-align:right; padding-right:10px;">27,990</td>
+    <td style="text-align:right; padding-right:10px;">1,000,000</td>
+    <td style="text-align:right; padding-right:10px;">4,167</td>
+    <td style="text-align:right; padding-right:10px;">4,167</td>
+    <td style="text-align:right; padding-right:10px;">976,177</td>
+  </tr>
+  <tr>
+    <td style="text-align:right; padding-right:10px;">2</td>
+    <td style="text-align:right; padding-right:10px;">27,990</td>
+    <td style="text-align:right; padding-right:10px;">976,177</td>
+    <td style="text-align:right; padding-right:10px;">4,067</td>
+    <td style="text-align:right; padding-right:10px;">8,234</td>
+    <td style="text-align:right; padding-right:10px;">952,255</td>
+  </tr>
+  <tr>
+    <td style="text-align:right; padding-right:10px;">3</td>
+    <td style="text-align:right; padding-right:10px;">27,990</td>
+    <td style="text-align:right; padding-right:10px;">952,255</td>
+    <td style="text-align:right; padding-right:10px;">3,968</td>
+    <td style="text-align:right; padding-right:10px;">12,202</td>
+    <td style="text-align:right; padding-right:10px;">928,233</td>
+  </tr>
+  <tr>
+    <td style="text-align:right; padding-right:10px;">4</td>
+    <td style="text-align:right; padding-right:10px;">27,990</td>
+    <td style="text-align:right; padding-right:10px;">928,233</td>
+    <td style="text-align:right; padding-right:10px;">3,868</td>
+    <td style="text-align:right; padding-right:10px;">16,069</td>
+    <td style="text-align:right; padding-right:10px;">904,111</td>
+  </tr>
+  <tr>
+    <td style="text-align:right; padding-right:10px;">5</td>
+    <td style="text-align:right; padding-right:10px;">27,990</td>
+    <td style="text-align:right; padding-right:10px;">904,111</td>
+    <td style="text-align:right; padding-right:10px;">3,767</td>
+    <td style="text-align:right; padding-right:10px;">19,837</td>
+    <td style="text-align:right; padding-right:10px;">879,889</td>
+  </tr>
+  <tr>
+    <td style="text-align:right; padding-right:10px;">6</td>
+    <td style="text-align:right; padding-right:10px;">27,990</td>
+    <td style="text-align:right; padding-right:10px;">879,889</td>
+    <td style="text-align:right; padding-right:10px;">3,666</td>
+    <td style="text-align:right; padding-right:10px;">23,503</td>
+    <td style="text-align:right; padding-right:10px;">855,566</td>
+  </tr>
+  <tr>
+    <td style="text-align:right; padding-right:10px;">7</td>
+    <td style="text-align:right; padding-right:10px;">27,990</td>
+    <td style="text-align:right; padding-right:10px;">855,566</td>
+    <td style="text-align:right; padding-right:10px;">3,565</td>
+    <td style="text-align:right; padding-right:10px;">27,068</td>
+    <td style="text-align:right; padding-right:10px;">831,141</td>
+  </tr>
+  <tr>
+    <td style="text-align:right; padding-right:10px;">8</td>
+    <td style="text-align:right; padding-right:10px;">27,990</td>
+    <td style="text-align:right; padding-right:10px;">831,141</td>
+    <td style="text-align:right; padding-right:10px;">3,463</td>
+    <td style="text-align:right; padding-right:10px;">30,531</td>
+    <td style="text-align:right; padding-right:10px;">806,615</td>
+  </tr>
+  <tr>
+    <td style="text-align:right; padding-right:10px;">9</td>
+    <td style="text-align:right; padding-right:10px;">27,990</td>
+    <td style="text-align:right; padding-right:10px;">806,615</td>
+    <td style="text-align:right; padding-right:10px;">3,361</td>
+    <td style="text-align:right; padding-right:10px;">33,892</td>
+    <td style="text-align:right; padding-right:10px;">781,986</td>
+  </tr>
+  <tr>
+    <td style="text-align:right; padding-right:10px;">10</td>
+    <td style="text-align:right; padding-right:10px;">27,990</td>
+    <td style="text-align:right; padding-right:10px;">781,986</td>
+    <td style="text-align:right; padding-right:10px;">3,258</td>
+    <td style="text-align:right; padding-right:10px;">37,150</td>
+    <td style="text-align:right; padding-right:10px;">757,255</td>
+  </tr>
+  <tr>
+    <td style="text-align:right; padding-right:10px;">11</td>
+    <td style="text-align:right; padding-right:10px;">27,990</td>
+    <td style="text-align:right; padding-right:10px;">757,255</td>
+    <td style="text-align:right; padding-right:10px;">3,155</td>
+    <td style="text-align:right; padding-right:10px;">40,305</td>
+    <td style="text-align:right; padding-right:10px;">732,421</td>
+  </tr>
+  <tr>
+    <td style="text-align:right; padding-right:10px;">12</td>
+    <td style="text-align:right; padding-right:10px;">27,990</td>
+    <td style="text-align:right; padding-right:10px;">732,421</td>
+    <td style="text-align:right; padding-right:10px;">3,052</td>
+    <td style="text-align:right; padding-right:10px;">43,357</td>
+    <td style="text-align:right; padding-right:10px;">707,483</td>
+  </tr>
+  <tr>
+    <td style="text-align:right; padding-right:10px;">13</td>
+    <td style="text-align:right; padding-right:10px;">27,990</td>
+    <td style="text-align:right; padding-right:10px;">707,483</td>
+    <td style="text-align:right; padding-right:10px;">2,948</td>
+    <td style="text-align:right; padding-right:10px;">46,305</td>
+    <td style="text-align:right; padding-right:10px;">682,441</td>
+  </tr>
+  <tr>
+    <td style="text-align:right; padding-right:10px;">14</td>
+    <td style="text-align:right; padding-right:10px;">27,990</td>
+    <td style="text-align:right; padding-right:10px;">682,441</td>
+    <td style="text-align:right; padding-right:10px;">2,844</td>
+    <td style="text-align:right; padding-right:10px;">49,148</td>
+    <td style="text-align:right; padding-right:10px;">657,295</td>
+  </tr>
+  <tr>
+    <td style="text-align:right; padding-right:10px;">15</td>
+    <td style="text-align:right; padding-right:10px;">27,990</td>
+    <td style="text-align:right; padding-right:10px;">657,295</td>
+    <td style="text-align:right; padding-right:10px;">2,739</td>
+    <td style="text-align:right; padding-right:10px;">51,887</td>
+    <td style="text-align:right; padding-right:10px;">632,044</td>
+  </tr>
+  <tr>
+    <td style="text-align:right; padding-right:10px;">16</td>
+    <td style="text-align:right; padding-right:10px;">27,990</td>
+    <td style="text-align:right; padding-right:10px;">632,044</td>
+    <td style="text-align:right; padding-right:10px;">2,634</td>
+    <td style="text-align:right; padding-right:10px;">54,520</td>
+    <td style="text-align:right; padding-right:10px;">606,688</td>
+  </tr>
+  <tr>
+    <td style="text-align:right; padding-right:10px;">17</td>
+    <td style="text-align:right; padding-right:10px;">27,990</td>
+    <td style="text-align:right; padding-right:10px;">606,688</td>
+    <td style="text-align:right; padding-right:10px;">2,528</td>
+    <td style="text-align:right; padding-right:10px;">57,048</td>
+    <td style="text-align:right; padding-right:10px;">581,227</td>
+  </tr>
+  <tr>
+    <td style="text-align:right; padding-right:10px;">18</td>
+    <td style="text-align:right; padding-right:10px;">27,990</td>
+    <td style="text-align:right; padding-right:10px;">581,227</td>
+    <td style="text-align:right; padding-right:10px;">2,422</td>
+    <td style="text-align:right; padding-right:10px;">59,470</td>
+    <td style="text-align:right; padding-right:10px;">555,659</td>
+  </tr>
+  <tr>
+    <td style="text-align:right; padding-right:10px;">19</td>
+    <td style="text-align:right; padding-right:10px;">27,990</td>
+    <td style="text-align:right; padding-right:10px;">555,659</td>
+    <td style="text-align:right; padding-right:10px;">2,315</td>
+    <td style="text-align:right; padding-right:10px;">61,785</td>
+    <td style="text-align:right; padding-right:10px;">529,985</td>
+  </tr>
+  <tr>
+    <td style="text-align:right; padding-right:10px;">20</td>
+    <td style="text-align:right; padding-right:10px;">27,990</td>
+    <td style="text-align:right; padding-right:10px;">529,985</td>
+    <td style="text-align:right; padding-right:10px;">2,208</td>
+    <td style="text-align:right; padding-right:10px;">63,994</td>
+    <td style="text-align:right; padding-right:10px;">504,204</td>
+  </tr>
+  <tr>
+    <td style="text-align:right; padding-right:10px;">21</td>
+    <td style="text-align:right; padding-right:10px;">27,990</td>
+    <td style="text-align:right; padding-right:10px;">504,204</td>
+    <td style="text-align:right; padding-right:10px;">2,101</td>
+    <td style="text-align:right; padding-right:10px;">66,094</td>
+    <td style="text-align:right; padding-right:10px;">478,315</td>
+  </tr>
+  <tr>
+    <td style="text-align:right; padding-right:10px;">22</td>
+    <td style="text-align:right; padding-right:10px;">27,990</td>
+    <td style="text-align:right; padding-right:10px;">478,315</td>
+    <td style="text-align:right; padding-right:10px;">1,993</td>
+    <td style="text-align:right; padding-right:10px;">68,087</td>
+    <td style="text-align:right; padding-right:10px;">452,318</td>
+  </tr>
+  <tr>
+    <td style="text-align:right; padding-right:10px;">23</td>
+    <td style="text-align:right; padding-right:10px;">27,990</td>
+    <td style="text-align:right; padding-right:10px;">452,318</td>
+    <td style="text-align:right; padding-right:10px;">1,885</td>
+    <td style="text-align:right; padding-right:10px;">69,972</td>
+    <td style="text-align:right; padding-right:10px;">426,214</td>
+  </tr>
+  <tr>
+    <td style="text-align:right; padding-right:10px;">24</td>
+    <td style="text-align:right; padding-right:10px;">27,990</td>
+    <td style="text-align:right; padding-right:10px;">426,214</td>
+    <td style="text-align:right; padding-right:10px;">1,776</td>
+    <td style="text-align:right; padding-right:10px;">71,748</td>
+    　<td style="text-align:right; padding-right:10px;">400,000</td>
+  </tr>
+</table>
+<p>ここから，<span class="Large-Bold-Red">更に同じ返済額で完済したい</span>，場合を考えていきましょう</p>
+<p>つまり，<span class="Large-Bold-Blue">毎月，27,990円</span>，を続けていくわけです．</p>
+<p>結果は，</p>
+<p class="Large-Bold-Blue">残クレ</p>
+<table xmlns="http://www.w3.org/1999/xhtml" cellspacing="0" cellpadding="0" dir="ltr" border="1">
+  <col width="96" />
+  <col width="99" />
+  <col width="107" />
+  <col width="160" span="2" />
+  <col width="107" />
+  <tr>
+    <td width="96"></td>
+    <td width="145">残クレ返却額(月）</td>
+    <td width="112">残金</td>
+    <td width="116">金利分発生額</td>
+    <td width="127">残クレ金利総額</td>
+    <td width="104">残金</td>
+  </tr>
+  <tr>
+    <td style="text-align:right; padding-right:10px;">27</td>
+    <td style="text-align:right; padding-right:10px;">27,990</td>
+    <td style="text-align:right; padding-right:10px;">347,245</td>
+    <td style="text-align:right; padding-right:10px;">1,447</td>
+    <td style="text-align:right; padding-right:10px;">76,419</td>
+    <td style="text-align:right; padding-right:10px;">320,702</td>
+  </tr>
+  <tr>
+    <td style="text-align:right; padding-right:10px;">28</td>
+    <td style="text-align:right; padding-right:10px;">27,990</td>
+    <td style="text-align:right; padding-right:10px;">320,702</td>
+    <td style="text-align:right; padding-right:10px;">1,336</td>
+    <td style="text-align:right; padding-right:10px;">77,755</td>
+    <td style="text-align:right; padding-right:10px;">294,049</td>
+  </tr>
+  <tr>
+    <td style="text-align:right; padding-right:10px;">29</td>
+    <td style="text-align:right; padding-right:10px;">27,990</td>
+    <td style="text-align:right; padding-right:10px;">294,049</td>
+    <td style="text-align:right; padding-right:10px;">1,225</td>
+    <td style="text-align:right; padding-right:10px;">78,980</td>
+    <td style="text-align:right; padding-right:10px;">267,284</td>
+  </tr>
+  <tr>
+    <td style="text-align:right; padding-right:10px;">30</td>
+    <td style="text-align:right; padding-right:10px;">27,990</td>
+    <td style="text-align:right; padding-right:10px;">267,284</td>
+    <td style="text-align:right; padding-right:10px;">1,114</td>
+    <td style="text-align:right; padding-right:10px;">80,094</td>
+    <td style="text-align:right; padding-right:10px;">240,409</td>
+  </tr>
+  <tr>
+    <td style="text-align:right; padding-right:10px;">31</td>
+    <td style="text-align:right; padding-right:10px;">27,990</td>
+    <td style="text-align:right; padding-right:10px;">240,409</td>
+    <td style="text-align:right; padding-right:10px;">1,002</td>
+    <td style="text-align:right; padding-right:10px;">81,095</td>
+    <td style="text-align:right; padding-right:10px;">213,421</td>
+  </tr>
+  <tr>
+    <td style="text-align:right; padding-right:10px;">32</td>
+    <td style="text-align:right; padding-right:10px;">27,990</td>
+    <td style="text-align:right; padding-right:10px;">213,421</td>
+    <td style="text-align:right; padding-right:10px;">889</td>
+    <td style="text-align:right; padding-right:10px;">81,985</td>
+    <td style="text-align:right; padding-right:10px;">186,321</td>
+  </tr>
+  <tr>
+    <td style="text-align:right; padding-right:10px;">33</td>
+    <td style="text-align:right; padding-right:10px;">27,990</td>
+    <td style="text-align:right; padding-right:10px;">186,321</td>
+    <td style="text-align:right; padding-right:10px;">776</td>
+    <td style="text-align:right; padding-right:10px;">82,761</td>
+    <td style="text-align:right; padding-right:10px;">159,107</td>
+  </tr>
+  <tr>
+    <td style="text-align:right; padding-right:10px;">34</td>
+    <td style="text-align:right; padding-right:10px;">27,990</td>
+    <td style="text-align:right; padding-right:10px;">159,107</td>
+    <td style="text-align:right; padding-right:10px;">663</td>
+    <td style="text-align:right; padding-right:10px;">83,424</td>
+    <td style="text-align:right; padding-right:10px;">131,781</td>
+  </tr>
+  <tr>
+    <td style="text-align:right; padding-right:10px;">35</td>
+    <td style="text-align:right; padding-right:10px;">27,990</td>
+    <td style="text-align:right; padding-right:10px;">131,781</td>
+    <td style="text-align:right; padding-right:10px;">549</td>
+    <td style="text-align:right; padding-right:10px;">83,973</td>
+    <td style="text-align:right; padding-right:10px;">104,340</td>
+  </tr>
+  <tr>
+    <td style="text-align:right; padding-right:10px;">36</td>
+    <td style="text-align:right; padding-right:10px;">27,990</td>
+    <td style="text-align:right; padding-right:10px;">104,340</td>
+    <td style="text-align:right; padding-right:10px;">435</td>
+    <td style="text-align:right; padding-right:10px;">84,408</td>
+    <td style="text-align:right; padding-right:10px;">76,786</td>
+  </tr>
+  <tr>
+    <td style="text-align:right; padding-right:10px;">37</td>
+    <td style="text-align:right; padding-right:10px;">27,990</td>
+    <td style="text-align:right; padding-right:10px;">76,786</td>
+    <td style="text-align:right; padding-right:10px;">320</td>
+    <td style="text-align:right; padding-right:10px;">84,728</td>
+    <td style="text-align:right; padding-right:10px;">49,116</td>
+  </tr>
+  <tr>
+    <td style="text-align:right; padding-right:10px;">38</td>
+    <td style="text-align:right; padding-right:10px;">27,990</td>
+    <td style="text-align:right; padding-right:10px;">49,116</td>
+    <td style="text-align:right; padding-right:10px;">205</td>
+    <td style="text-align:right; padding-right:10px;">84,932</td>
+    <td style="text-align:right; padding-right:10px;">21,331</td>
+  </tr>
+  <tr>
+    <td style="text-align:right; padding-right:10px;">39</td>
+    <td style="text-align:right; padding-right:10px;">27,990</td>
+    <td style="text-align:right; padding-right:10px;">21,331</td>
+    <td style="text-align:right; padding-right:10px;">89</td>
+    <td style="text-align:right; padding-right:10px;">85,021</td>
+    <td class="Large-Red" style="text-align:right; padding-right:10px;">-6,569</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>と無事，<span class="Large-Bold-Red">39か月</span>で完済できたことになります．返済額が大きいので早く終わりますね．（きっちり0とはなりませんが）</p>
+<p>グラフ化すると，</p>
+<p><img src="Zankure-03.png" width="942" height="431" alt=""/></p>
+<p>このように，残クレの場合も，残金が0に近づいているので金利合計がはやめにサチってきていることがわかります．</p>
+<p>残クレの金利総額は， <span class="Large-Bold-Red">85,201 円</span>となります．（ちょっと支払いすぎているので細かい計算は異なりますが．．．</p>
+<p>&nbsp;</p>
+<p>通常ローンと残クレ，どちらがお得かは難しい問題ですが，</p>
+<p>　<span class="Large-Bold-Red">残価にも金利がかかる</span></p>
+<p>というのは気になりますね．．</p>
+<p>&nbsp;</p>
+<p>次に，スクリプトを使ったhtml上での計算を行ってみます．</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<p><span class="style10"><a href="zanka-04.html"><img src="L-arrow.png" alt="l" width="57" height="34" /></a> <a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a></span><a href="zanka-06.html"><img src="R-arrow.png" alt="r" width="57" height="34" /></a></p>
+
+</body>
+
+</html>
+

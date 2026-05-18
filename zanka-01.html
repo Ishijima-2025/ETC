@@ -1,0 +1,162 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>PCP plan</title>
+
+<script type="text/javascript"
+
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+
+</script>
+
+
+<link href="160324.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style7 {color: #000000; }
+</style>
+
+</head>
+
+
+
+<body>
+
+<h1 class="X-Large-Bold-Blue">残クレの計算-01</h1>
+<h1>&nbsp;</h1>
+<p class="Large-Bold-Red">残クレとは</p>
+<p>最近よく聞く言葉，残クレ，主に自家用車のローンでよく宣伝しています．</p>
+<p>　<span class="Red-Bold">毎月の支払いを少なめに，高級車に乗れる</span></p>
+<p>などなど．．．．</p>
+<p>ChatGTPに聞くと，</p>
+<p class="Blue">balloon payment car loan 最後に大きな残価（balloon payment）が残るローン 残クレの仕組みに最も近い表現 </p>
+<p class="Blue">residual value loan 「残価設定ローン」の直訳的表現 </p>
+<p class="Blue">PCP (Personal Contract Purchase) plan</p>
+<p>と言うようです．</p>
+<p>&nbsp;</p>
+<p>巷で，トヨタの高級ミニバンを見かける機会が増えたのもそのせいかも．．．．（気のせいかも．．）</p>
+<p>私が調べた感じで簡単にまとめると</p>
+<p>　<span class="Red-Bold">何年後かの残価を指定し（４０％とか），それを差し引いた金額のローンを組む</span></p>
+<p>ということで，毎月の支払い金額を抑えることができます．</p>
+<p>しかし，<span class="Large-Bold-Blue">金利</span>は，</p>
+<p>　<span class="Blue-Bold">車両金額総額の金利（上の例だと，100-40=60%，ではなく100％そのもの）がかかる</span></p>
+<p>ことに注意となります．</p>
+<p>また，いろいろな注意点</p>
+<p>　<span class="Blue-Bold">事故，使い方で残価が変動</span></p>
+<p>などがネットに出ていますが，このサイトでは純粋に金利の数学のみで検討していきましょう．</p>
+<p>&nbsp;</p>
+<p class="Large-Bold-Red">・元利均等の場合の通常ローンと残クレとの違い</p>
+<p>まずは通常ローンの場合との，毎月の支払額，金利について比較していきましょう．</p>
+<p class="Blue-Bold">金利（年）：k <br />
+金利（月）：x (=k/12) <br />
+返済期間（年）：y <br />
+返済期間（月）：m (=y×12) <br />
+返済金額：s <br />
+毎月の返済金額（通常）：W <br />
+毎月の返済額（残クレ）：W<sub>z</sub> <br />
+残　価（％）：　α</p>
+<p>とします．頭金はなしです</p>
+<p class="Large-Bold-Blue">・通常ローンの場合</p>
+<p>通常ローンの場合は，<a href="Loan-02.html">ここ</a>，に記したように，</p>
+<p><span class="Large-Bold-Blue">毎月の返済額</span><br />
+</p>
+<p>\(\Large     \displaystyle s = (W - s \cdot x) \frac{(1+x)^{ m} -1}{x} \)</p>
+<p>  \(\Large     \displaystyle     W - s \cdot x =  \frac{s \cdot x}{(1+x)^{ m} -1}\)</p>
+<p>\(\Large     \displaystyle   W = s \cdot x  \left[ \frac{1}{(1+x)^{ m} -1} +  1 \right] \)</p>
+<p>\(\Large     \displaystyle   = s \cdot x  \left[ \frac{1 + (1+x)^{ m} -1}{(1+x)^{ m} -1}  \right] \)</p>
+<p>\(\Large     \displaystyle   = s \cdot x  \left[ \frac{ (1+x)^{ m} }{(1+x)^{ m} -1}  \right] \)</p>
+<p>\(\Large     \displaystyle   = \color{red}{\frac{sx}{1-(1+x)^{-m}}} \)</p>
+<p>となります．</p>
+<p>&nbsp;</p>
+<p class="Large-Bold-Blue"> 金利合計</p>
+<p>ｎか月目の金利は，<br />
+</p>
+<p>\(\Large     \displaystyle s \cdot x  \cdot \frac{(1+x)^m - (1+x)^{n-1}}{(1+x)^m - 1} \)</p>
+<p>なので，総額は，<br />
+</p>
+<p>\(\Large     \displaystyle \sum_{n=1}^m s \cdot x  \cdot \frac{(1+x)^m - (1+x)^{n-1}}{(1+x)^m - 1} \)</p>
+<p>を計算すればいいことになります．．<br />
+</p>
+<p>\(\Large     \displaystyle \sum_{n=1}^m s \cdot x \cdot \frac{(1+x)^m - (1+x)^{n-1}}{(1+x)^m - 1} \)</p>
+<p>\(\Large     \displaystyle   = \frac{s \cdot x}{(1+x)^m - 1}\sum_{n=1}^m \{ (1+x)^m - (1+x)^{n-1} \} \)</p>
+<p>第一項は，ｍ倍すればいいので，
+  第二項を考えると，<br />
+</p>
+<p>\(\Large     \displaystyle Y \equiv \sum_{n=1}^m  (1+x)^{n-1} = (1+x)^0 + (1+x)^2 + .... + (1+x)^{m-1}\)</p>
+<p>\(\Large     \displaystyle   (1+x) \ Y  = (1+x)^1 + (1+x)^3 + .... + (1+x)^{m}\)</p>
+<p>\(\Large     \displaystyle   (1+x) \ Y - Y =  (1+x)^{m} -1 \)</p>
+<p>\(\Large     \displaystyle  Y = \frac{ (1+x)^{m} -1}{x} \)</p>
+<p>&nbsp;</p>
+<p>\(\Large     \displaystyle \sum_{n=1}^m s \cdot x \cdot \frac{(1+x)^m - (1+x)^{n-1}}{(1+x)^m - 1} \)</p>
+<p>\(\Large     \displaystyle   = \frac{s \cdot x}{(1+x)^m - 1}\{ m \cdot (1+x)^m - \frac{ (1+x)^{m} -1}{x} \} \)</p>
+<p>\(\Large     \displaystyle  = s \cdot x \ \left\{ \frac{m \cdot (1+x)^m}{(1+x)^m - 1} - \frac{ 1}{x} \right\} \)</p>
+<p>\(\Large     \displaystyle  = s \cdot x \ \left\{ \frac{m }{1 - (1+x)^{-m} } - \frac{ 1}{x} \right\} \)</p>
+<p>\(\Large     \displaystyle  = \color{red}{s  \ \left\{ \frac{mx }{1 - (1+x)^{-m} } - 1 \right\} }\)</p>
+<p>となります．</p>
+<p>&nbsp;</p>
+<p class="Large-Bold-Blue">・残クレの場合</p>
+<p><span class="Large-Bold-Blue">毎月の返済額</span></p>
+<p>残クレの場合には，通常ローンに比べて，左辺の総額が少なくなるだけなので，<br />
+</p>
+<p>\(\Large     \displaystyle (1 - \alpha)s = (W_z - s \cdot x) \frac{(1+x)^m -1}{x} \)</p>
+<p>\(\Large     \displaystyle W_z - s \cdot x =\frac{(1 - \alpha)sx}{(1+x)^m -1} \)</p>
+<p>\(\Large     \displaystyle W_z =sx \left[ 1 + \frac{(1 - \alpha)}{(1+x)^m -1}\right] \)</p>
+<p>\(\Large     \displaystyle =sx \left[  \frac{(1+x)^m -1 +1 - \alpha}{(1+x)^m -1}\right] \)</p>
+<p>\(\Large     \displaystyle =\color{red}{sx \left[  \frac{(1+x)^m  - \alpha}{(1+x)^m -1}\right]} \)</p>
+<p>となります．</p>
+<p><span class="Blue-Bold">α=0</span>，とすれば，通常ローンと同じになるはずですね．．<br />
+</p>
+<p>\(\Large     \displaystyle W_{z0} = sx \left[  \frac{(1+x)^m  }{(1+x)^m -1}\right] =   \frac{sx  }{1 - (1+x)^{-m}} \)</p>
+<p>&nbsp;</p>
+<p class="Large-Bold-Blue">金利合計</p>
+<p>ｎか月目の金利は，Wを消去する前の式は，<a href="Loan-02.html">ここ</a>，にあるように，<br />
+</p>
+<p>\(\Large     \displaystyle s \cdot x  - (W - s \cdot x) [(1+x)^{n-1}-1] \)</p>
+<p>なので，この式に，<span class="Blue-Bold">W<sub>z</sub></span>を代入すればいいことになります．<br />
+</p>
+<p>\(\Large     \displaystyle W_z - s \cdot x = sx \left[  \frac{(1+x)^m  - \alpha}{(1+x)^m -1}\right] -  s \cdot x \)</p>
+<p>\(\Large     \displaystyle = sx \left[  \frac{(1+x)^m  - \alpha - \{(1+x)^m -1\}}{(1+x)^m -1}\right] \)</p>
+<p>\(\Large     \displaystyle = sx \left[  \frac{1  - \alpha }{(1+x)^m -1}\right] \)</p>
+<p>&nbsp;</p>
+<p>したがって，ｎか月目の金利は，<br />
+</p>
+<p>\(\Large     \displaystyle     s \cdot x  -  sx \left[  \frac{1  - \alpha }{(1+x)^m -1}\right] [(1+x)^{n-1}-1]\)</p>
+<p>&nbsp;</p>
+<p>総額は，n=1からmの総和なので，nを含む項は，<br />
+</p>
+<p>\(\Large     \displaystyle Y \equiv \sum_{n=1}^m  (1+x)^{n-1} = (1+x)^0 + (1+x)^2 + .... + (1+x)^{m-1}\)</p>
+<p>\(\Large     \displaystyle (1+x) \ Y  = (1+x)^1 + (1+x)^3 + .... + (1+x)^{m}\)</p>
+<p>\(\Large     \displaystyle (1+x) \ Y - Y =  (1+x)^{m} -1 \)</p>
+<p>\(\Large     \displaystyle Y = \frac{ (1+x)^{m} -1}{x} \)</p>
+<p>&nbsp;</p>
+<p>となるので，<br />
+</p>
+<p>\(\Large     \displaystyle m \ s \cdot x  -  sx \left[  \frac{1  - \alpha }{(1+x)^m -1}\right] \left[ \frac{ (1+x)^{m} -1}{x} - m \right]\)</p>
+<p>\(\Large     \displaystyle = m \ s \cdot x  -  sx \left[  \frac{1  - \alpha }{(1+x)^m -1}\right] \left[ \frac{ (1+x)^{m} -1-mx}{x}  \right]\)</p>
+<p>\(\Large     \displaystyle = s \cdot m \cdot x-s   (1 - \alpha) \left\{  1 -  \frac{mx }{(1+x)^m -1}\right\} \)</p>
+<p>\(\Large     \displaystyle = s \cdot m \cdot x-s   (1 - \alpha) + s   (1 - \alpha)  \frac{mx }{(1+x)^m -1} \)</p>
+<p>\(\Large     \displaystyle = s \cdot m \cdot x \left\{ 1+  \frac{1 - \alpha }{(1+x)^m -1}\right\}-s   (1 - \alpha)  \)</p>
+<p>\(\Large     \displaystyle = s \cdot m \cdot x \left\{  \frac{(1+x)^m -1 + 1 - \alpha }{(1+x)^m -1}\right\}-s   (1 - \alpha)  \)</p>
+<p>\(\Large     \displaystyle = s \cdot m \cdot x \left\{  \frac{(1+x)^m  - \alpha }{(1+x)^m -1}\right\}-s   (1 - \alpha)  \)</p>
+<p>\(\Large     \displaystyle = \color{red}{s \left[ m \cdot x \left\{  \frac{(1+x)^m  - \alpha }{(1+x)^m -1}\right\}-   (1 - \alpha) \right]}  \)<br />
+</p>
+<p>&nbsp;</p>
+<p>となります．．．．けっこう複雑です．．．</p>
+<p>金利合計も，<span class="Blue-Bold">α=0</span>，とすれば，通常ローンと同じになるはずですね．．</p>
+<p>\(\Large     \displaystyle  s \left[ m \cdot x \left\{  \frac{(1+x)^m }{(1+x)^m -1}\right\}-   1 \right]  = s  \ \left\{ \frac{mx }{1 - (1+x)^{-m} } - 1 \right\} \)</p>
+<p>&nbsp;</p>
+<p>では，実際に数値を入れて計算していきましょう．</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<p><span class="style10"><a href="Revolving-04.html"><img src="L-arrow.png" alt="l" width="57" height="34" /></a> <a href="index.html"><img src="TOP.png" alt="t" width="57" height="34" /></a> <a href="zanka-02.html"><img src="R-arrow.png" alt="r" width="57" height="34" /></a></span></p>
+
+</body>
+
+</html>
+
